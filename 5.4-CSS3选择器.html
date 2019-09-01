@@ -1,0 +1,232 @@
+<!-- CSS3选择器 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height:150px;
+            background-color: #eee;
+            margin-top: 5px;
+        }
+        section{
+            width: 200px;
+            height: 30px;
+            margin-bottom: 5px;
+            background-color: #ff0;
+        }
+        div:empty{
+            background-color:red;
+        }
+        section:empty{
+            background-color:#abcdef;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <section>one</section>
+        <section>two</section>
+    </div>
+    <div></div>
+    <div>
+        <section>three</section>
+        <section>four</section>
+        <section>five</section>
+        <section></section>
+    </div>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>伪元素</title>
+    <style type="text/css">
+        li{
+            list-style: none;
+        }
+        li::before{
+            content:"*";
+        }
+        
+        
+    </style>
+</head>
+<body>
+<ul>
+    <li>我是第一</li>
+    <li>我是第二</li>
+    <li>我是第三</li>
+    <li>我是第四</li>
+</ul>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>:nth-child()</title>
+    <style type="text/css">
+        th{background-color:yellow;}
+        tbody tr:nth-child(odd){color:orange;}
+        tbody tr:nth-child(even){color:green;}
+    </style>
+</head>
+<body>
+    <table border="1" cellspacing="0" width="200">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年纪</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>男</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>女</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>赵五</td>
+                <td>男</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>王二</td>
+                <td>男</td>
+                <td>12</td>
+            </tr>
+        </tbody>  
+    </table>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+          ol li:first-child{color:red;}
+          ol li:nth-child(2){color:green;}
+          ol li:last-child{color:blue;}
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                家用电器
+                <ol>
+                    <li>冰箱</li>
+                    <li>洗衣机</li>
+                    <li>空调</li>
+                </ol>
+            </li>
+            <li>
+                清洁用
+                <ol>
+                    <li>洗衣液</li>
+                    <li>消毒液</li>
+                    <li>洗厕液</li>
+                </ol>
+            </li>
+            <li>
+                妇婴用品
+                <ol>
+                    <li>奶粉</li>
+                    <li>纸尿裤</li>
+                    <li>奶瓶</li>
+                </ol>
+            </li>
+        </ul>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>动态伪类</title>
+        <style type="text/css">
+            input{
+                border:1px solid #ccc;
+            }
+            input:hover{
+                border:1px solid red;
+            }
+            input[type="text"]:focus{
+                background-color:orange;
+            }
+            input[type="password"]:focus{
+                background-color:yellow;
+            }
+            
+        </style>
+    </head>
+    <body>
+        用户名：<input type="text">
+        <br/><br/>
+        密码：<input type="password">
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>属性选择器</title>
+    <style type="text/css">
+    div{
+       color:red; 
+    }
+    .pwd{
+        background-color:yellow;
+    }
+    </style>
+</head>
+<body>
+    <div class="name">name</div>
+    <div class="pwd">pwd</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>群组选择器</title>
+    <style type="text/css">
+    section,
+    article,
+    aside,
+    div{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <section>section</section>
+    <article>article</article>
+    <aside>aside</aside>
+    <div>div</div>
+</div>
+</body>
+</html>
+ -->

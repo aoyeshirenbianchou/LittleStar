@@ -1,0 +1,299 @@
+<!-- DOM事件 -->
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>输入文本</title>
+        <script>
+        window.onload=function()
+        {
+            var text=document.getElementById("text"),
+                P=document.getElementsByTagName("p")[0],
+                b=document.getElementsByTagName("b")[0],
+                A=document.getElementById("A");
+            P.style.display="inline"
+            document.onkeyup=function()
+            {
+               var len=text.value.length;
+               A.innerHTML="您还可以输入";
+               b.innerHTML=30-len;
+               P.style.color="black";
+               if(len>30)
+               {
+                   A.innerHTML="您已超出";
+                   b.innerHTML=len-30;
+                   P.style.color="red";
+               }
+            }
+        }
+        </script>
+    </head>
+    <body>
+        字数限制在30字内，
+        <p>
+            <span id="A">您还可以输入</span>
+            <b>30</b>
+            <span id="B">字</span>
+        </p>
+        <textarea cols="40" rows="3" id="text"></textarea>
+    </body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>mouse</title>
+    <style type="text/css">
+        p{
+            margin:10px;
+        }
+        #div{
+            overflow:auto;
+            width:200px;
+            height:200px;
+            border:2px solid gray;
+            margin-bottom:20px;
+        }
+        #content{
+            width:200px;
+            height:100px;
+            border:2px solid gray;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function()
+        {
+            var div=document.getElementById("div"),
+                content=document.getElementById("content");
+            div.onscroll=function()
+            {
+                this.style.color="red";
+                content.innerHTML="内容滚动了";
+            };
+            div.onmouseout=function()
+            {this.style.color="green"};
+        }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod,tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo,consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse,cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non,proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="content"></div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>onchange()</title>
+        <style type="text/css">
+            #div{
+                width:300px;
+                height:300px;
+                border:2px solid gray;
+                margin:100px 0 0 200px;
+            }
+        </style>
+        <script type="text/javascript">
+           window.onload=function()
+           {
+               var sel=document.getElementById("color");
+                   div=document.getElementById("div");
+               sel.onchange=function()
+               {
+                   var col=this.value;
+                   if(col!="0")
+                   {div.style.backgroundColor=col;}
+                   else{div.style.backgroundColor="#fff"}
+               }  
+           }
+        </script>
+    </head>
+    <body>
+        <div>
+            <span>请选择您喜欢的颜色:</span>
+            <select id="color">
+                <option value="0">请选择</option>
+                <option value="yellow">黄色</option>
+                <option value="orange">橘色</option>
+                <option value="pink">粉色</option>
+                <option value="purple">紫色</option>
+            </select>
+        </div>
+        <div id="div">我是div</div>
+ </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>onblur和onfocus</title>
+    <style type="text/css">
+        .red{border:1px solid red;}
+        span{display:none;}
+    </style>
+    <script type="text/javascript">
+    window.onload=function()
+    {
+        var name=document.getElementsByTagName("input")[0],
+            tip=document.getElementsByTagName("span")[0];
+        /*
+        if(name.value=="")
+        {
+            name.onfocus=function()
+            {tip.style.display="inline"};
+            name.onblur=function()
+            {tip.innerHTML="用户名不能为空";
+            name.className="red"};
+        }
+        */
+        name.onfocus=function()
+        {
+            this.className="";
+            if(this.value=="")
+            {tip.style.display="inline";}
+        }
+        name.onblur=function()
+        {
+            if(this.value=="")
+            {
+                this.className="red";
+                tip.innerHTML="用户名不能为空";
+                tip.style.display="inline";
+            }
+            else
+            {
+                this.className="";
+                tip.style.display="none";
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    姓名：<input type="text">
+    <span>请输入姓名</span>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>onload</title>
+        <script type="text/javascript">
+            window.onload=function()
+            {
+                var butt=document.getElementsByTagName("input")[0];
+                butt.style.color="grey";
+                
+                butt.onclick=function(){this.style.color="red"};
+                butt.onmouseout=function(){this.style.color="grey"};
+            }
+               
+                /* 
+                butt.onclick=c(this,"red");
+                butt.onmouseout=c(this,"grey");
+                function c(obj,col)
+                {obj.style.color=col}
+                */
+/*错误原因：
+        1、把一个函数赋值给一个元素的事件时，不能调用
+        因为调用相当于打开页面就执行，这样就与事件相冲突。
+        2、事件不能用this来指向，此时this所指的是window，window并没有color属性所以报错
+        3、传入参数时应该加引号，引号内是参数，没有引号是变量。
+*/
+        </script>
+    </head>
+    <body>
+        <input type="button" value="点击改变按钮字体颜色">
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息录入</title>
+</head>
+<body>
+    <input type="button" value="录入">
+    <script type="text/javascript">
+        var inputs=document.getElementsByTagName("input")[0];
+        inputs.onclick=inputsfun;
+        function inputsfun()
+        {
+            var pro=prompt("请输入员工姓名"),
+                i=1;
+            while(pro!="-1")
+            {
+                document.write("录入的第"+i+"个员工姓名是："+pro+"<br/>");
+                pro=prompt("请输入员工姓名");
+                i++;
+            }
+            
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全选和反选</title>
+</head>
+<body>
+    <input type="button" value="全选">
+    <script>
+        var inp=document.getElementsByTagName("input")[0];
+        inp.onclick=function()
+        {
+            if(inp.value=="全选")
+            {inp.value="反选"}
+            else{inp.value="全选"}
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HTML事件</title>
+</head>
+<body>
+    <input type="button" value="开始" onmouseover="fun1(this,'#282')" onmouseout="fun2(this,'#000')">
+    <input type="button" value="结束" onmouseover="fun1(this,'#228')" onmouseout="fun2(this,'#000')">
+    <script type="text/javascript">
+        function fun1(butt,col)
+        {butt.style.color=col}
+        function fun2(butt,col)
+        {butt.style.color=col}
+    </script>   
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="utf-8">
+    <title>绑定事件</title>
+</head>
+<body>
+    <form>
+        <input type="button" value="点击我试试" onclick="fun(this,'green')">
+        <script>
+            function fun(butt,bgcolor)
+            {butt.style.background=bgcolor}
+        </script>
+    </form>
+</body>
+</html>
+ -->

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JScarousel</title>
+  <meta charset="UTF-8">
+<!--
+  <link rel="stylesheet" type="text/css" href="../CSSstylesheet/css.css">
+  <script type="text/javascript" src="../JSjavascript/js.script"></script>
+-->
+<style type="text/css">
+*{
+  margin:0;
+}
+body{
+  background-image:url(image/img5.jpg);
+  background-size:100%;
+}
+.shade{
+  margin:0;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.75);
+}
+.banner{
+  width:720px;
+  height:470px;
+  overflow:hidden;
+  margin:70px auto 0px auto;
+}
+.img{
+  width:720px;
+  height:470px;
+  background-size:100% 100%;
+  float:left;
+  }
+#img1{
+  background-image:url(image/img1.jpg);
+}
+#img2{
+  background-image:url(image/img2.jpg);
+}
+#img3{
+  background-image:url(image/img3.jpg);
+}
+#img4{
+  background-image:url(image/img4.jpg);
+}
+.allbtn{
+  margin-left:50%;
+  position:relative;
+  left:-35px;
+}
+.btn{
+  width:5px;
+  height:5px;
+  border-radius:5px;
+  background-color:rgba(225,225,225,0.9);
+  float:left;
+  margin:30px 6px;
+  cursor:pointer;
+}
+.active{
+  width:5px;
+  height:5px;
+  border-radius:5px;
+  background-color:rgba(225,225,225,0.9);
+  float:left;
+  margin:30px 6px;
+  box-shadow:0 0 5px orange inset;
+  border:1px solid white;
+  cursor:pointer;
+}
+.turn{
+  width:30px;
+  height:60px;
+  background-image:url(image/jiantou.png);
+  background-size:100% 100%;
+  margin-top:-240px;
+  cursor:pointer;
+}
+#pre{
+  float:left;
+  margin-left:120px;
+
+}
+#next{
+  float:right;
+  margin-right:120px;
+  transform:rotate(180deg);
+}
+.turn:hover{
+  background-image:url(image/jiantouA.png);
+}
+</style>
+
+</head>
+<body>
+<div class="shade">
+  <div class="banner" id="banner">
+    <div class="img" id="img1"></div>
+    <div class="img" id="img2"></div>
+    <div class="img" id="img3"></div>
+    <div class="img" id="img4"></div>
+  </div>
+  <div class="press">
+    <div class="turn" id="pre"></div>
+    <div class="turn" id="next"></div>
+  </div>
+  <div class="allbtn" id="allbtn">
+    <div class="btn active"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+  </div>
+</div>
+</body>
+
+<script type="text/javascript">
+/*获取元素函数*/
+  function byid(id)
+  {
+    return document.getElementById(id);
+  }
+  var i=0,//图片、圆点切换的索引
+      I=0,//用来遍历的值
+      A=null,//setInterval的id
+      pic=byid("banner").getElementsByTagName("div"),
+      dot=byid("allbtn").getElementsByTagName("div");
+/*图片、圆点的切换*/
+  function changeimg()
+  {
+    //清除激活样式
+    for(I=0;I<=3;I++)
+    {
+      pic[I].style.display="none";
+      dot[I].className="btn";
+    };
+    //设置激活样式
+    pic[i].style.display="block";
+    dot[i].className="active";
+  }
+/*1、自动轮播*/
+    function carousel()
+    {
+      A=window.setInterval(
+        function()
+        {
+          i<3&i>=0?i++:i=0;
+          changeimg();
+        }
+        ,1500)
+    }
+/*2、点击圆点实现跳转*/
+  for(I=0;I<=3;I++)
+  {
+    dot[I].id=I;
+    dot[I].onclick=function()
+    {
+      i=this.id;
+      changeimg();//点击圆点实现跳转
+    }
+    stop();
+  }
+/*3、点击翻页实现跳转*/
+  byid("pre").onclick=function()
+  {
+    i--;
+    i<0?i=3:i;
+    changeimg();
+  };
+  byid("next").onclick=function()
+  {
+    i++;
+    i>3?i=0:i;
+    changeimg();
+  };
+/*4、鼠标停留在图片时停止轮播*/
+  function stop()
+  {
+    //鼠标悬停圆点及图片清除自动轮播
+    dot[I].onmouseover=function(){clearInterval(A)};
+    pic[I].onmouseover=function(){clearInterval(A)};
+    byid("pre").onmouseover=function(){clearInterval(A)};
+    byid("next").onmouseover=function(){clearInterval(A)};
+    //鼠标离开圆点及图片后开始自动轮播
+    dot[I].onmouseout=function(){carousel()};
+    pic[I].onmouseout=function(){carousel()};
+    byid("pre").onmouseout=function(){carousel()};
+    byid("next").onmouseout=function(){carousel()};
+  }
+carousel();
+/*标签文字*/
+</script>
+</html>

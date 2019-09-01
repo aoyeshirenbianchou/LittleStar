@@ -1,0 +1,15 @@
+*{margin:0;padding:0;}
+html,
+body{width:100%;height:100%;}
+body{background:linear-gradient(rgb(196, 228, 253) 0%,rgb(255, 255, 255) 60%,rgb(148, 190, 89) 100%);overflow:hidden;}
+.clouds{width:100%;}
+.clouds div{width:200px;height:200px;border-radius:50%;background-color:white;position:absolute;}
+.clouds div:before{content:" ";display:block;width:100px;height:160px;border-radius:50px;background-color:white;transform:translate(-50px,40px) rotate(-30deg);}
+.clouds div:after{content:" ";display:block;width:320px;height:80px;border-radius:40px;background-color:white;transform:translate(-100px,-60px);}
+.clouds-1{transform:scale(0.6);opacity:0.9;position:absolute;top:-3%;animation:anione 20s ease infinite;}
+.clouds-2{transform:scale(0.5);opacity:0.9;position:absolute;top:23%;animation:anione 12s ease infinite;}
+.clouds-3{transform:scale(0.8);position:absolute;top:8%;animation:anione 23s ease infinite;}
+.clouds-4{transform:scale(0.4);opacity:0.9;position:absolute;top:18%;animation:anione 28s ease infinite;}
+.clouds-5{transform:scale(0.5);opacity:0.9;position:absolute;top:1%;animation:anione 15s ease infinite;}
+@keyframes anione{0% {left:120%;}100%{left:-20%;}}
+.rabbit img{height:240px;position:absolute;bottom:5%;right:20%;}

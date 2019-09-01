@@ -1,0 +1,356 @@
+<!-- 
+完成页面功能动画的实现
+并没有进行代码的精简、封装
+面向过程 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+      *{
+        margin:0;
+        padding:0;
+        list-style:none;
+      }
+      body{
+        background-image:url(IMG/bg.png);
+        display:flex;
+        justify-content:space-around;
+        overflow-y:scroll;
+      }
+      .unit{
+        width:80%;
+        margin:100px 0;
+        background-color:white;
+        transition:height 1s;
+      }
+      .tag{
+        display:flex;
+        margin:30px 30px 20px 30px;
+      }
+      .tag>li{
+        height:30px;
+        margin-right:20px;
+        border:1px solid orange;
+        border-radius:5px;
+        line-height:30px;
+        padding:0 10px;
+        color:orange;
+        cursor:pointer;
+      }
+      .tag>li.active{
+        background-color:orange;
+        color:white;
+      }
+      .content{
+        margin:0 30px;
+        display:flex;
+        flex-wrap:wrap;
+      }
+      .content>figure{
+        width:230px;
+        height:130px;
+        margin-right:20px;
+        margin-bottom:20px;
+        position:relative;
+        overflow:hidden;
+        border-radius:5px;
+        cursor:pointer;
+      }
+      .content>figure>img{
+        width:100%;
+        height:100%;
+        display:block;
+      }
+      .content>figure>figcaption{
+        width:230px;
+        height:130px;
+        color:white;
+        background-color:rgba(0,0,0,0.3);
+        text-align:center;
+        position:absolute;
+        top:0;
+        left:0;
+        line-height:130px;
+        opacity:0;
+      }
+      .content>figure:hover figcaption{
+        opacity:1;
+        transition:opacity 0.5s;
+      }
+      .content>figure:hover img{
+        transform:scale(1.1);
+        transition:transform 0.5s;
+      }
+  </style>
+</head>
+<body>
+    <div class="unit">
+        <ul class="tag"></ul>
+        <div class="content"></div>
+    </div>
+<script type="text/javascript">
+const data=[
+    {
+    type: 'JavaScript',
+    title: 'ES6快速入门',
+    alt: 'ES6快速入门',
+    src: 'IMG/1.jpg'
+    },
+
+    {
+    type: 'JavaScript',
+    title: 'Javascript实现二叉树算法',
+    alt: 'Javascript实现二叉树算法',
+    src: 'IMG/2.jpg'
+    },
+
+    {
+    type: 'JavaScript',
+    title: 'Canvas绘制时钟',
+    alt: 'Canvas绘制时钟',
+    src: 'IMG/3.jpg'
+    },
+
+    {
+    type: '前端框架',
+    title: 'React知识点综合运用实例',
+    alt: 'React知识点综合运用实例',
+    src: 'IMG/4.jpg'
+    },
+
+    {
+    type: '前端框架',
+    title: 'React组件',
+    alt: 'React组件',
+    src: 'IMG/5.jpg'
+    },
+
+    {
+    type: '前端框架',
+    title: 'Vue+Webpack打造todo应用',
+    alt: 'Vue+Webpack打造todo应用',
+    src: 'IMG/6.jpg'
+    },
+
+    {
+    type: '前端框架',
+    title: 'Vue.js入门基础',
+    alt: 'Vue.js入门基础',
+    src: 'IMG/7.jpg'
+    },
+
+    {
+    type: '前端框架',
+    title: '使用Vue2.0实现购物车和地址选配功能',
+    alt: '使用Vue2.0实现购物车和地址选配功能',
+    src: 'IMG/8.jpg'
+    },
+
+    {
+    type: 'VUE',
+    title: 'Vue+Webpack打造todo应用',
+    alt: 'Vue+Webpack打造todo应用',
+    src: 'IMG/6.jpg'
+    },
+
+    {
+    type: 'VUE',
+    title: 'Vue.js入门基础',
+    alt: 'Vue.js入门基础',
+    src: 'IMG/7.jpg'
+    },
+
+    {
+    type: 'VUE',
+    title: '使用Vue2.0实现购物车和地址选配功能',
+    alt: '使用Vue2.0实现购物车和地址选配功能',
+    src: 'IMG/8.jpg'
+    },
+
+    {
+    type: 'React',
+    title: 'React知识点综合运用实例',
+    alt: 'React知识点综合运用实例',
+    src: 'IMG/4.jpg'
+    },
+
+    {
+    type: 'React',
+    title: 'React组件',
+    alt: 'React组件',
+    src: 'IMG/5.jpg'
+    },
+
+    {
+    type: 'JavaScript',
+    title: '基于websocket的火拼俄罗斯',
+    alt: '基于websocket的火拼俄罗斯',
+    src: 'IMG/15.jpg'
+    }
+];
+(function(data){
+    //生成tag标签
+    function creatTag(data){
+        const tag=document.querySelector(".tag");
+        //得到现有data标签类型组成的数组tagArr
+        let tagArr=[];
+        for(let i in data){
+            tagArr[i]=data[i]["type"];
+        };
+        tagArr.unshift("全部");
+        tagArr=[...new Set(tagArr)];
+        //将标签生成dom添加到页面上
+        for(let i in tagArr){
+            let li=document.createElement("li");
+            li.innerHTML=tagArr[i];
+            tag.appendChild(li);
+        }
+    }
+    //初始化
+    function init(){
+        //让“全部”标签处于选中状态
+        const content=document.querySelector(".content");
+        //把data里面title相同的数组项去掉，组成新的数组项
+        let showData=[];//“全部”标签中的显示内容数据
+        let titleArr=[];
+        for(let i=0;i<data.length;i++){
+            titleArr[i]=data[i]["title"];
+            let first=titleArr.indexOf(titleArr[i]),
+                last=titleArr.lastIndexOf(titleArr[i]);
+            (first===last)&&(showData.push(data[i]));
+        };
+        //把数据生成dom添加到页面上
+        for(i of showData){
+            let figure=document.createElement("figure"),
+                img=document.createElement("img"),
+                figcaption=document.createElement("figcaption");
+            img.src=i["src"];
+            img.alt=i["alt"];
+            figcaption.innerHTML=i["title"];
+            figure.appendChild(img);
+            figure.appendChild(figcaption);
+            content.appendChild(figure);
+        }
+        //初始选中状态标签样式
+        const allTag=document.querySelectorAll(".tag li");
+        allTag[0].style.backgroundColor="orange";
+        allTag[0].style.color="white";
+        //初始包裹层高度
+        const unit=document.querySelector(".unit"),
+        tagHeight=document.querySelector(".tag").offsetHeight,
+        contentHeight=content.offsetHeight;
+        unit.style.height=contentHeight+tagHeight+60+"px";
+
+    }
+
+    //根据data的type对图片进行分类
+    function classify(typeSelector){
+        let type=[];
+        if(typeSelector=="全部"){
+            let showData=[];//“全部”标签中的显示内容数据
+            let titleArr=[];
+            for(let i=0;i<data.length;i++){
+                titleArr[i]=data[i]["title"];
+                let first=titleArr.indexOf(titleArr[i]),
+                last=titleArr.lastIndexOf(titleArr[i]);
+                (first===last)&&(showData.push(data[i]));
+            };
+            for(let i in showData){
+                type[i]=showData[i];
+            };
+        }else{
+            for(let i in data){
+                (data[i]["type"]==typeSelector)&&(type[i]=data[i]);
+            }
+        }
+        return type;
+    }
+
+    //绑定事件，点击生成图
+    function functionName(){
+        const allTag=document.querySelectorAll(".tag li");
+        for(let i=0;i<allTag.length;i++){
+            (function(i){
+                allTag[i].onclick=function(){
+                    for(let i of allTag){
+                        i.style.backgroundColor="white";
+                        i.style.color="orange";
+                    };
+                    this.style.backgroundColor="orange";
+                    this.style.color="white";
+                    const content=document.querySelector(".content");
+                    let existFigure=document.querySelectorAll(".content figure");
+                    //生成现有的title数组
+                    let existTitle=[];
+                    let existFigcaption=document.querySelectorAll(".content figcaption");
+                    for(let i=0;i<existFigcaption.length;i++){
+                        existTitle[i]=existFigcaption[i].innerHTML;
+                    };
+                    //生成点击的类下的title数组
+                    let clickTitle=[];
+                    for(let i in classify(this.innerHTML)){
+                        let title=classify(this.innerHTML)[i]["title"];
+                        clickTitle.push(title);
+                    };
+
+                    //如果现有的title不在当前点击的title里，删除节点
+                    for(let i=0;i<existTitle.length;i++){
+                        if(clickTitle.indexOf(existTitle[i])==-1){
+                            content.removeChild(existFigure[i]);
+                        }else{
+                            existFigure[i].style.opacity="0";
+                            existFigure[i].style.transform="scale(0,0)";
+                            setTimeout(()=>{
+                                existFigure[i].style.opacity="1";
+                                existFigure[i].style.transform="scale(1,1)";
+                                existFigure[i].style.transition="transform 0.5s"
+                            },100)
+                        }
+                    }
+                    //如果现有的title里不含有点击的title，生成dom添加到页面上
+                    for(let i in classify(this.innerHTML)){
+                        if(existTitle.indexOf(classify(this.innerHTML)[i]["title"])==-1){
+                            let img=new Image();
+                            img.src=classify(this.innerHTML)[i]["src"];
+                            img.alt=classify(this.innerHTML)[i]["alt"];
+                            let figcaption=document.createElement("figcaption");
+                            figcaption.innerHTML=classify(this.innerHTML)[i]["title"];
+                            let figure=document.createElement("figure");
+                            figure.appendChild(img);
+                            figure.appendChild(figcaption);
+                            content.appendChild(figure);
+                            figure.style.transform="scale(0,0)";
+                            figure.style.opacity="0";
+                            setTimeout(()=>{
+                                figure.style.transform="scale(1,1)";
+                                figure.style.opacity="1";
+                                figure.style.transition="transform 0.5s"
+                            },100);
+                        }
+                    }
+                    const unit=document.querySelector(".unit"),
+                        tagHeight=document.querySelector(".tag").offsetHeight,
+                        contentHeight=content.offsetHeight;
+                    unit.style.height=contentHeight+tagHeight+60+"px";
+                    unit.style.transition="height 0.6s";
+                }
+            })(i)
+        }
+    }
+creatTag(data);
+init();
+functionName();
+})(data)
+//type是大类，是点击标签后的分类依据
+//title是区分是否重复的依据
+
+//添加“全部”标签 √
+//写动画效果 √
+//该写精简封装代码
+</script>
+</body>
+</html>

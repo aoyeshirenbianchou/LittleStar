@@ -1,0 +1,228 @@
+<!-- 盒子模型 -->
+<!DOCTYPE html>
+<html>
+    <head lang="zh">
+        <meta charset="UTF-8">
+        <title>display属性</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+                color:#adcded;
+                margin:auto;
+            }
+            h3{ 
+                width:100px;
+                height:25px;border:1px solid #adcded;
+                font-size:1.2em;
+                padding-top:2px;
+                text-align:center;
+                background-color:#ededed;
+              }
+            ul{ 
+                border:1px solid #adcded;
+                border-top-width:0;
+                width:100px;
+                list-style:none
+                
+              }
+            li{
+                line-height:30px;
+                padding-left:30px;
+                display:none;
+              }
+              
+            .div1:hover li{display:block;}
+            .div2:hover li{display:block;}
+            .div3:hover li{display:block;}
+            body{margin-top:30%;}
+
+        </style>
+    </head>
+    <body>
+    <div class="big">
+        <div class="div1">
+            <h3>家电</h3>
+            <ul class="elec">
+                <li>冰箱</li>
+                <li>洗衣机</li>
+                <li>空调</li>
+            </ul>
+        </div>
+        <div class="div2">
+            <h3>洗护</h3>
+            <ul class="wash">
+                <li>洗衣液</li>
+                <li>消毒液</li>
+                <li>柔顺剂</li>
+            </ul>
+        </div>
+        <div  class="div3">
+            <h3>衣物</h3>
+             <ul class="clothes">
+                <li>衬衫</li>
+                <li>裤子</li>
+                <li>卫衣</li>
+            </ul>
+        </div>
+      </div>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head lang="zh">
+        <meta charset="UTF-8">
+        <title>display属性</title>
+        <style type="text/css">
+            ul {width:200px;}
+            li{display:none;}
+            ul:hover li{display:inline;}
+        </style>
+    </head>
+    <body>
+        <ul>
+            <h2>家电</h2>
+            <li>冰箱</li>
+            <li>空调</li>
+            <li>洗衣机</li>
+        </ul>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="zh">
+        <meta charset="UTF-8">
+        <title>margin外边距</title>
+        <style type="text/css">
+            * {margin: 0;
+                padding: 0;}
+            ul{list-style:none;width:300px;height:400px;
+                background-color:pink;
+                padding-top:40px;}
+            li{width:200px;height:50px;background-color:yellow;margin:40px;}
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>border属性</title>
+    <style type="text/css">
+        body{width:300px;}
+        span{background-color:yellow;}
+        .content{padding:30px 30px 120px 30px;background-color:orange;}
+        .container{padding:50px 30px 40px 100px;background-color:pink;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <span>
+            我是span元素
+            </span>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>border属性</title>
+    <style type="text/css">
+        li{width:200px;height:50px;}
+        .li1{border-top:2px solid red;}
+        .li2,.li3{border-right:2px dashed green;}
+        .li4{border-top:3px dashed blue;border-left:3px double purple;}
+        .li5{border:2px solid orange;}
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="li1">第一个li</li>
+        <li class="li2">第二个li</li>
+        <li class="li3">第三个li</li>
+        <li class="li4">第四个li</li>
+        <li class="li5">第五个li</li>
+    </ul>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>可设置宽和高的元素</title>
+    <style type="text/css">
+       div{ width:600px;height:200px;border:1px solid gray;font-size:14px;}
+       p{width:30%;font-size:2em;}
+       span input{width:30%;height:25%;}
+       .submit{width:100px;height:30pc;background-color:orange;font-size:20px;}
+    </style>
+</head>
+<body>
+    <div>
+        <p>登录</p>
+        <span>请输入您的信息：</span><input type="text" class="input"><br>
+        <input type="submit" class="sub">
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>元素的宽度</title>
+    <style type="text/css">
+    div{background-color:pink;width:600px;height:600px;}
+    p{background-color:yellow;height:200px;background-color:yellow;}
+    .p1{width:30%;height:30%;}
+    .p2{max-width:30%;max-height:30%;}
+    .p3{max-width:300px;min-height:200px;}
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p1">第一个P标签是父元素宽、高的30%</p>
+        <p class="p2">第二个P标签的最大宽度是父元素的30%，最大高度是父元素的30%</p>
+        <p class="p3">第三个P标签的最小高度是200px，最大宽度是300px</p>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>元素的宽度</title>
+    <style type="text/css">
+        div{background-color:pink;}
+        p{background-color:yellow;}
+        .p1{width:50%;}
+        .p2{max-width:30%;}
+        .p3{min-width:70%;}
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p1">第一个P标签是父元素宽度的50%</p>
+        <p class="p2">第二个P标签的最大宽度是父元素的30%</p>
+        <p class="p3">第三个P标签的最小宽度是父元素的70%</p>
+    </div>
+</body>
+</html>
+ -->

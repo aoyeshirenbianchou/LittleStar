@@ -1,0 +1,165 @@
+<!-- flex布局 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        body{
+            min-width:600px;
+        }
+        header{
+            height:70px;
+            padding:0 10px;
+            background-color:black;
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            color:#ddd;
+        }
+        .logo,
+        .nav,
+        .login{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+        }
+        .logo{width:180px;}
+        .nav{width:280px;}
+        .login{width:80px;}
+        .logo img{width:100%;}
+        main{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-around;
+            align-content:flex-start;
+        }
+        section{
+            width:340px;
+            height:150px;
+            background-color:#eee;
+            border-radius:5px;
+            margin:10px;
+            flex-grow:1;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        section>div{
+            margin:15px 25px;
+        }
+        section>div>p{
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 头部 -->
+    <header>
+        <div class="logo">
+            <img src="http://climg.mukewang.com/59197ab000014f1503000100.jpg" alt="">
+        </div>
+        <nav class="nav">
+            <li>课程</li>
+            <li>路径</li>
+            <li>猿问</li>
+            <li>手记</li>
+        </nav>     
+        <div class="login">
+            <input type="button" value="登录">
+            <input type="button" value="注册">
+        </div>
+    </header>
+<!-- 主体内容 -->
+    <main>
+        <section>
+            <div class="box">
+                <p>《前端小白入门手册》</p>
+                <p>适用人群：没有任何前端基础的小白</p>
+                <p>费用：￥499</p>
+            </div>
+            <div class="shopping">
+                <div class="btn">加入购物车</div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <p>《HTML5月CSS3实现动态网页》</p>
+                <p>适用人群：有html和css基础的童鞋</p>
+                <p>费用：￥599</p>
+            </div>
+            <div class="shopping">
+                <div class="btn">加入购物车</div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <p>《前端小白入门手册》</p>
+                <p>适用人群：没有任何前端基础的小白</p>
+                <p>费用：￥499</p>
+            </div>
+            <div class="shopping">
+                <div class="btn">加入购物车</div>
+            </div>
+        </section>
+        <section>
+            <div class="box">
+                <p>《HTML5月CSS3实现动态网页》</p>
+                <p>适用人群：有html和css基础的童鞋</p>
+                <p>费用：￥599</p>
+            </div>
+            <div class="shopping">
+                <div class="btn">加入购物车</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    ul {
+        list-style: none;
+        background-color: orange;
+        margin: 0;
+        padding: 0;
+        height: 150px;
+        width: 390px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        align-content:space-around;
+    }
+    
+    li {
+        font-size: 24px;
+        width: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>第一个li</li>
+        <li>第二个li</li>
+        <li>第三个li</li>
+        <li>第四个li</li>
+        <li>第五个li</li>
+        <li>第六个li</li>
+    </ul>
+</body>
+
+</html>
+ -->

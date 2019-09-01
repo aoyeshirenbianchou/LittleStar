@@ -1,0 +1,242 @@
+<!-- 
+表格的各种属性练习，全都还是属性样式，连网页布局也介绍了表格布局。
+但是表格嵌套非常繁复，解析生成DOM树的时候非常耗费性能，并且表格布局是要等表格内容全部加载完成才会显示表格，尽量使用表格布局。
+类似的其实bootStrap的栅格化布局就是一种非常好的取代 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>表格属性</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <!-- 在以下表格标签中添加相应代码 -->
+        <table border="1" width="500" cellspacing="0" cellpadding="5px" align="center">
+            <caption>课程表</caption>
+            <tr bgcolor="orange" align="center">
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期四</th>
+                <th>星期五</th>
+            </tr>
+            <tr align="center">
+                <td rowspan="2">语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr align="center">
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr align="center">
+                <td colspan="5">课间活动</td>
+            </tr>
+            <tr align="center">
+                <td rowspan="2">
+                   <table border="1" width="100%" cellspacing="0">
+                       <tr><td>前半节</td><td>后半节</td></tr>
+                       <tr><td>诗词</td><td>古文</td></tr>
+                   </table>
+                </td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr align="center">
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+        </table>
+    </body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>表格属性</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table border="1" width="500" cellspacing="0" cellpadding="5px" align="center">
+            <caption>课程表</caption>
+            <tr bgcolor="pink" align="center">
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期四</th>
+                <th>星期五</th>
+            </tr>
+            <tr align="center">
+                <td rowspan="2">语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr align="center">
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr align="center">
+                <td colspan="5">课间活动</td>
+            </tr>
+            <tr align="center">
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr align="center">
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+        </table>
+    </body>
+</html>
+ -->
+ <!-- 
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>表格属性</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <table width="500px" border="1" align="center" cellspacing="0" cellpadding="5">
+            <caption>课程表</caption>
+        <thead>
+            <tr bgcolor="pink">
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期四</th>
+                <th>星期五</th>
+            </tr>
+        </thead>
+        <tbody align="center" valign="middle">
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td bgcolor="pink">语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td>课间活动</td>
+                <td bgcolor="pink">课间活动</td>
+                <td>课间活动</td>
+                <td>课间活动</td>
+            </tr>
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td bgcolor="pink">英语</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td bgcolor="pink">生物</td>
+            </tr>
+        </tbody>
+        </table>
+    </body>
+    </html
+  -->
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>表格属性</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table width="500px" border="1" bgcolor="pink" cellspacing="5" cellpadding="10" frame="vsides" rules="rows">
+            <caption>课程表</caption>
+            <tr>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期四</th>
+                <th>星期五</th>
+            </tr>
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td>课间活动</td>
+                <td>课间活动</td>
+                <td>课间活动</td>
+                <td>课间活动</td>
+            </tr>
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                <td>生物</td>
+            </tr>
+        </table>
+    </body>
+    </html>
+ -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表格</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <table border="1" width="300px" height="200px">
+        <caption>课程表</caption>
+        <tr><th>星期一</th><th>星期二</th><th>星期四</th><th>星期五</th></tr>
+        <tr><td>语文</td><td>数学</td><td>生物</td><td>英语</td></tr>
+        <tr><td>语文</td><td>数学</td><td>生物</td><td>英语</td></tr>
+        <tr><td>语文</td><td>数学</td><td>生物</td><td>英语</td></tr>
+        <tr><td>语文</td><td>数学</td><td>生物</td><td>英语</td></tr>
+    </table>
+</body>
+</html>
+ -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表格</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <table border="1" align="center">
+        <tr><td>上午</td><td>下午</td></tr>
+        <tr><td>语文</td><td>英语</td></tr>
+        <tr><td>数学</td><td>历史</td></tr>
+    </table>
+</body>
+</html> 
+-->

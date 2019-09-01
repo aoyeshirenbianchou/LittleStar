@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+      font-family:"微软雅黑";
+      text-decoration:none;
+      color:#eee;
+    }
+    body{
+      min-width:900px;
+    }
+    a:hover{
+        color:pink;
+    }
+    .head{
+      height:100px;
+      background-color:black;
+      position:relative;
+    }
+    .head ul{
+      position:absolute;
+      top:0px;
+      right:0px;
+      margin-right:20px;
+    }
+    .head ul li{
+      display:inline;
+      line-height:100px;
+      margin-right:30px;
+    }
+    .head a:hover{
+      color:orange;
+    }
+    .main{
+      height:600px;
+      margin-left:340px;
+      margin-right:240px;
+      line-height:3em;
+      position:relative;
+    }
+    .middle{
+      width:100%;
+      height:600px;
+      background-color:#aaa;
+    }
+    .middle img{
+      width:80%;
+      position:absolute;
+      top:200px;
+      left:0;
+      right:0;
+      margin:auto;
+    }
+    .left{
+      width:320px;
+      height:500px;
+      background-color:#ccc;
+      padding-top:100px;
+      padding-left:20px;
+      position:absolute;
+      top:0px;
+      left:-340px;
+    }
+    .left a{
+      background-color:#aaa;
+    }
+    .right{
+      width:220px;
+      height:500px;
+      background-color:#ccc;
+      padding-top:100px;
+      padding-left:20px;
+      position:absolute;
+      top:0px;
+      right:-240px;
+    }
+    input{
+      width:180px;
+      height:20px;
+      padding:2px;
+    }
+    input[type=button]{
+      width:187px;
+      height:40px;
+      background-color:orange;
+      margin-top:20px;
+    }
+    .foot{
+      width:100%;
+      height:100px;
+      background-color:black;
+      font-size:0.8em;
+      position:relative;
+      color:#eee;
+    }
+    .foot ul{
+      line-height:80px;
+      position:absolute;
+      top:0px;
+      left:25px;
+    }
+    .foot li{
+      list-style-type:none;
+      display:inline;
+      margin-right:10px;
+    }
+    .foot .copyright{
+      position:absolute;
+      bottom:30px;
+      left:25px;
+    }
+    .foot .link{
+      line-height:100px;
+      position:absolute;
+      right:45px;
+    }
+    .foot .link a{
+      margin-left:20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <img src="http://climg.mukewang.com/58c0d2d900016ce303000100.png"/>
+    <ul>
+      <li><a href="#"> 课程</a></li>
+      <li><a href="#"> 职业路径</a></li>
+      <li><a href="#"> 实战</a></li>
+      <li><a href="#"> 猿问</a></li>
+      <li><a href="#"> 手记</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="middle">
+      <img src="http://climg.mukewang.com/590037e00001fab706000400.jpg"/>
+    </div>
+    <div class="left">
+      <h3>课程推荐</h3>
+      <p><a href="#">职业路径</a>&nbsp;&nbsp;HTML5与CSS3实现动态网页</p>
+      <p><a href="#">职业路径</a>&nbsp;&nbsp;零基础入门Android语法与界面</p>
+      <p><a href="#">职业路径</a>&nbsp;&nbsp;IOS基础语法与常用控件</p>
+      <p><a href="#">职业路径</a>&nbsp;&nbsp;PHP入门开发</p>
+      <p><a href="#">职业路径</a>&nbsp;&nbsp;JAVA入门开发</p>
+    </div>
+    <div class="right">
+      <h3>登陆</h3>
+      <form>
+        <input type="text" value="请输入登陆邮箱手机号">
+        <br/>
+        <input type="text" value="616位密码区分大小写不能输入空格">
+        <br/>
+        <input type="button" value="登陆">
+      </form>
+    </div> 
+  </div>
+  <div class="foot">
+    <ul>
+      <li><a href="#">企业合作</a></li>
+      <li><a href="#">人才招聘</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">讲师招募</a></li>
+      <li><a href="#">常见问题</a></li>
+      <li><a href="#">意见反馈</a></li>
+      <li><a href="#">慕课大学</a></li>
+      <li><a href="#">友情链接</a></li>
+    </ul>
+    <p class="copyright">&copy;2018&nbsp;imooc&dot;com&nbsp;京ICP备12003892号&ndash;11</p>
+    <div class="link">
+        <a href="#">官方公众号</a>
+        <a href="#">官方微博</a>
+      </div>    
+  </div>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    *{
+        margin:0;
+        padding:0;
+    }
+    .main{
+        width:100%;
+        min-width:800px;
+        margin:0 auto;
+    }
+    .up{
+        width:100%;
+        background-color:#ddd;
+        position:relative;
+    }
+    .up img{
+        width:32%;
+        margin:6% 12%;
+    }
+    .up .img2{
+        position:absolute;
+        right:0;
+        top:0;
+    }
+    .sub{
+        width:100%;
+        background-color:#aaa;
+    }
+    .sub img{
+        width:20%;
+        margin:5% 10% 5% 0;
+    }
+    .sub .imga{
+        margin-left:10%;
+    }
+    .sub .imgc{
+        margin-right:0;
+    }
+  </style>
+</head>
+<body>
+    <div class="main">
+        <div class="up">
+            <img class="img1" src="http://climg.mukewang.com/58c0f808000129a303600215.jpg">
+            <img class="img2" src="http://climg.mukewang.com/58c0f819000198a703600214.jpg">
+        </div>
+        <div class="sub">
+            <img class="imga" src="http://climg.mukewang.com/58c0f81d0001fe4402000060.jpg">
+            <img class="imgb" src="http://climg.mukewang.com/58c0f8220001dfce02000060.jpg">
+            <img class="imgc" src="http://climg.mukewang.com/58c0f8780001c74602000060.jpg">
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+            text-decoration:none;
+            font-family:"微软雅黑";
+            color:#eee;
+        }
+        body{
+            width:100%;
+            min-width:800px;
+            background-color:#313131;
+        }
+        .head{
+            width:100%;
+            height:100px;
+            background-color:black;
+            position:relative;
+        }
+        .head ul{
+            line-height:100px;
+            position:absolute;
+            top:0px;
+            right:30px;
+        }
+        .head li{
+            display:inline;
+            margin-left:15px;
+        }
+        .main{
+            width:90%;
+            height:600px;
+            position:relative;
+            margin:0 auto;
+            line-height:3em;
+/*？此处有问题？*/
+            border:1px solid red;
+/*把包裹left和right的容器main的边框去掉之后right的外边距就出现了问题*/
+        }
+        .left{
+            width:40%;
+            margin-top:40px;
+        }
+        .left li{
+            list-style-type:none;
+        }
+        .right{
+            width:28%;
+            margin-top:40px;
+            position:absolute;
+            top:0px;
+            right:32%;
+        }
+        .login{
+            width:32%;
+            margin-top:40px;
+            position:absolute;
+            top:0px;
+            right:0px;
+        }
+        .login form{
+            
+        }
+        .foot{
+            width:100%;
+            height:100px;
+            background-color:black;
+            font-size:0.8em;
+            position:relative;
+        }
+        .foot ul{
+            line-height:80px;
+            position:absolute;
+            top:0px;
+            left:25px;
+        }
+        .foot li{
+            list-style-type:none;
+            display:inline;
+            margin-right:10px;
+        }
+        .foot .copyright{
+            position:absolute;
+            bottom:30px;
+            left:25px;
+        }
+        .foot .link{
+            line-height:100px;
+            position:absolute;
+            right:45px;
+        }
+        .foot .link a{
+            margin-left:20px;
+        }
+  </style>
+</head>
+<body>
+   <div class="head">
+        <a href="#"><img src="http://climg.mukewang.com/58c0d2d900016ce303000100.png"/></a>
+        <ul>
+            <li><a href="#">课程</a></li>
+            <li><a href="#">职业路径</a></li>
+            <li><a href="#">实战</a></li>
+            <li><a href="#">猿问</a></li>
+            <li><a href="#">手记</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="left">
+            <h2>课程推荐</h2>
+            <ul>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;HTML5与CSS3实现动态网页</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;零基础入门Android语法与界面</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;IOS基础语法与常用控件</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;PHP入门开发</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;JAVA入门开发</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>相关课程</h2>
+            <p>
+                <a href="#">HTML</a>&nbsp;&nbsp;
+                <a href="#">CSS</a>&nbsp;&nbsp;
+                <a href="#">JavaScript</a>
+            </p>
+            <p>
+                <a href="#">HTML5</a>&nbsp;&nbsp;
+                <a href="#">CSS3</a>&nbsp;&nbsp;
+                <a href="#">Jquery</a>
+            </p>
+            <p>
+                <a href="#">移动端基础</a>&nbsp;&nbsp;
+                <a href="#">移动端APP开发</a>
+            </p>
+        </div>
+        <div class="login">
+            <h2>登陆</h2>
+            <form>
+                <input type="text" value="请输入登陆邮箱&frasl;手机号码" size="32"><br>
+                <input type="text" value="6&#8764;16位密码区分大小写&#8217;不能输入空格" size="32"><br>
+                <input type="button" value="登陆">
+            </form>
+        </div>
+    </div>
+    <div class="foot">
+        <ul>
+            <li><a href="#">企业合作</a></li>
+            <li><a href="#">人才招聘</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">讲师招募</a></li>
+            <li><a href="#">常见问题</a></li>
+            <li><a href="#">意见反馈</a></li>
+            <li><a href="#">慕课大学</a></li>
+            <li><a href="#">友情链接</a></li>
+        </ul>
+        <p class="copyright">&copy;2018&nbsp;imooc&dot;com&nbsp;京ICP备12003892号&ndash;11</p>
+        <div class="link">
+            <a href="#">官方公众号</a>
+            <a href="#">官方微博</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+            text-decoration:none;
+            font-family:"微软雅黑";
+            color:#eee;
+        }
+        body{
+            width:100%;
+            min-width:800px;
+            background-color:#313131;
+        }
+        .head{
+            width:100%;
+            height:100px;
+            background-color:black;
+            position:relative;
+        }
+        .head ul{
+            line-height:100px;
+            position:absolute;
+            top:0px;
+            right:30px;
+        }
+        .head li{
+            display:inline;
+            margin-left:15px;
+        }
+        .main{
+            width:80%;
+            height:600px;
+            position:relative;
+            margin:0 auto;
+            line-height:3em;
+/*？此处有问题？*/
+            border:1px solid red;
+/*把包裹left和right的容器main的边框去掉之后right的外边距就出现了问题*/
+        }
+        .left{
+            width:50%;
+            margin-top:40px;
+            border:1px solid red;
+        }
+        .left li{
+            list-style-type:none;
+        }
+        .right{
+            width:50%;
+            margin-top:40px;
+            position:absolute;
+            top:0px;
+            right:0px;
+            border:1px solid red;
+        }
+        .foot{
+            width:100%;
+            height:100px;
+            background-color:black;
+            font-size:0.8em;
+            position:relative;
+        }
+        .foot ul{
+            line-height:80px;
+            position:absolute;
+            top:0px;
+            left:25px;
+        }
+        .foot li{
+            list-style-type:none;
+            display:inline;
+            margin-right:10px;
+        }
+        .foot .copyright{
+            position:absolute;
+            bottom:30px;
+            left:25px;
+        }
+        .foot .link{
+            line-height:100px;
+            position:absolute;
+            right:45px;
+        }
+        .foot .link a{
+            margin-left:20px;
+        }
+  </style>
+</head>
+<body>
+   <div class="head">
+        <a href="#"><img src="http://climg.mukewang.com/58c0d2d900016ce303000100.png"/></a>
+        <ul>
+            <li><a href="#">课程</a></li>
+            <li><a href="#">职业路径</a></li>
+            <li><a href="#">实战</a></li>
+            <li><a href="#">猿问</a></li>
+            <li><a href="#">手记</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="left">
+            <h2>课程推荐</h2>
+            <ul>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;HTML5与CSS3实现动态网页</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;零基础入门Android语法与界面</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;IOS基础语法与常用控件</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;PHP入门开发</li>
+                <li><a href="#">职业路径</a>&nbsp;&nbsp;JAVA入门开发</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>相关课程</h2>
+            <p>
+                <a href="#">HTML</a>&nbsp;&nbsp;
+                <a href="#">CSS</a>&nbsp;&nbsp;
+                <a href="#">JavaScript</a>
+            </p>
+            <p>
+                <a href="#">HTML5</a>&nbsp;&nbsp;
+                <a href="#">CSS3</a>&nbsp;&nbsp;
+                <a href="#">Jquery</a>
+            </p>
+            <p>
+                <a href="#">移动端基础</a>&nbsp;&nbsp;
+                <a href="#">移动端APP开发</a>
+            </p>
+        </div>
+    </div>
+    <div class="foot">
+        <ul>
+            <li><a href="#">企业合作</a></li>
+            <li><a href="#">人才招聘</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">讲师招募</a></li>
+            <li><a href="#">常见问题</a></li>
+            <li><a href="#">意见反馈</a></li>
+            <li><a href="#">慕课大学</a></li>
+            <li><a href="#">友情链接</a></li>
+        </ul>
+        <p class="copyright">&copy;2018&nbsp;imooc&dot;com&nbsp;京ICP备12003892号&ndash;11</p>
+        <div class="link">
+            <a href="#">官方公众号</a>
+            <a href="#">官方微博</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>布局练习2-7</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+            text-decoration:none;
+            color:#eee;
+        }
+        body{
+            width:100%;
+            min-width:800px;
+        }
+        .head{
+            width:100%;
+            height:100px;
+            background-color:black;
+            position:relative;
+            top:0px;
+        }
+        .head ul{
+            line-height:100px;
+            position:absolute;
+            top:0px;
+            right:30px;
+        }
+        .head li{
+            display:inline;
+            margin-left:15px;
+        }
+        .main img{
+            width:100%;
+            display:block;
+        }
+        .foot{
+            width:100%;
+            height:100px;
+            background-color:black;
+            font-size:0.8em;
+            position:relative;
+        }
+        .foot ul{
+            line-height:80px;
+            position:absolute;
+            top:0px;
+            left:25px;
+        }
+        .foot li{
+            list-style-type:none;
+            display:inline;
+            margin-right:10px;
+        }
+        .foot .copyright{
+            position:absolute;
+            bottom:30px;
+            left:25px;
+        }
+        .foot .link{
+            line-height:100px;
+            position:absolute;
+            right:45px;
+        }
+        .foot .link a{
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <a href="#"><img src="http://climg.mukewang.com/58c0d2d900016ce303000100.png"/></a>
+        <ul>
+            <li><a href="#">课程</a></li>
+            <li><a href="#">职业路径</a></li>
+            <li><a href="#">实战</a></li>
+            <li><a href="#">猿问</a></li>
+            <li><a href="#">手记</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <img src="http://climg.mukewang.com/58c0eda50001e12416000480.jpg"/>
+        <img src="http://climg.mukewang.com/58c0edb80001c9f216000480.jpg"/>
+        <img src="http://climg.mukewang.com/58c0edc9000100d516000480.jpg"/>
+    </div>
+    <div class="foot">
+        <ul>
+            <li><a href="#">企业合作</a></li>
+            <li><a href="#">人才招聘</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">讲师招募</a></li>
+            <li><a href="#">常见问题</a></li>
+            <li><a href="#">意见反馈</a></li>
+            <li><a href="#">慕课大学</a></li>
+            <li><a href="#">友情链接</a></li>
+        </ul>
+        <p class="copyright">&copy;2018&nbsp;imooc&dot;com&nbsp;京ICP备12003892号&ndash;11</p>
+        <div class="link">
+            <a href="#">官方公众号</a>
+            <a href="#">官方微博</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+            text-decoration:none;
+            color:#eee;
+        }
+        .nav{
+            width:100%;
+            min-width:800px;
+            height:100px;
+            background-color:black;
+            position:absolute;
+            top:50%;
+            margin-top:-50px;
+        }
+        .nav ul{
+            line-height:100px;
+            position:absolute;
+            top:50%;
+            right:0px;
+            margin-top:-50px;
+            margin-right:15px;
+        }
+        .nav li{
+            display:inline;
+            margin:0px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#"><img src="http://climg.mukewang.com/58c0d2d900016ce303000100.png"/></a>
+        <ul>
+            <li><a href="#">课程</a></li>
+            <li><a href="#">职业路径</a></li>
+            <li><a href="#">实战</a></li>
+            <li><a href="#">猿问</a></li>
+            <li><a href="#">手记</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+ -->

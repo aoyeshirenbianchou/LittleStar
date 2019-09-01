@@ -1,0 +1,204 @@
+<!-- 浮动 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>慕课网</title>
+    <style type="text/css">
+        .img01{float:left;margin:0px 20px 10px 0px;}
+        .img02{float:right;margin:0px 0px 10px 20px;}
+        div{margin:10px;line-height:1.5em;}
+    </style>
+</head>    
+<body>
+    <div class="content">
+
+        <img src="http://climg.mukewang.com/59c8742e0001bc9607120172.jpg" alt="" class="img01">
+        <p>慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。</p>
+        <p>慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。</p>
+        <p>4月2日，国内首个IT技能学习类应用——慕课网3.1.0版本在应用宝首发。据了解，在此次上线的版本中，慕课网新增了课程历史记录、相关课程推荐等四大功能，为用户营造更加丰富的移动端IT学习体验。</p>
+        <img src="http://climg.mukewang.com/59c874560001779307120172.jpg" alt="" class="img02">
+        <p>老师来自于各大IT公司重要技术岗位，拥有丰富的实战经验。语言平实、通俗易懂，更接地气，传授最有价值的经验之谈。课程内容注重实用性，不仅让学员通过学习能够做出产品，而且学习过程中掌握的方法技巧在实际工作中用得上，能够切实帮助学员提升工作技能。</p>
+        <p>慕课网的绝大多数课程都经过了专业的后期制作，为课程内容匹配了个性化的视觉效果，帮助学员更好地理解课程内容，增加学习的乐趣。</p>
+    </div>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>浮动练习</title>
+    <meta charset="utf-8">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            color:#847c74;
+            font-family:"微软雅黑";
+        }
+        a{
+            text-decoration:none;
+        }
+        a:hover{
+            color:#fbecde;
+        }
+        .main,.list{
+            border:1px solid #847c74;
+        }
+        .line1,.line2,.line1,.line2,.list{
+            margin:10px;
+        }
+        .list{
+            float:left;
+        }
+        .line1,.line2{
+            overflow:hidden;
+            zoom:1;
+        }
+        p{
+            padding-bottom:5px;
+            text-align:center;
+        }
+        .main{
+            text-align:center;
+            margin:auto;
+            width:810px;
+        }
+    </style>
+</head>
+<body>   
+    <div class="main">
+        <div class="line1">
+            <div class="list">
+                <img src="http://climg.mukewang.com/590fe9770001e63102400135.jpg">
+                <p><a href="#">欢迎来到慕课网学习新知识！</a></p>
+            </div>
+            <div class="list">
+                <img src="http://climg.mukewang.com/590fe97d00011bda02400135.jpg">
+                <p><a href="#">欢迎来到慕课网学习新知识！</a></p>
+            </div>
+            <div class="list">
+                <img src="http://climg.mukewang.com/590fe982000150ba02400135.jpg">
+                <p><a href="#">欢迎来到慕课网学习新知识！</a></p>
+            </div>
+        </div>
+        <div class="line2">
+            <div class="list">
+                <img src="http://climg.mukewang.com/590fe9770001e63102400135.jpg">
+                <p><a href="#">欢迎来到慕课网学习新知识！</a></p>
+            </div>
+            <div class="list">
+                <img src="http://climg.mukewang.com/590fe97d00011bda02400135.jpg">
+                <p><a href="#">欢迎来到慕课网学习新知识！</a></p>
+            </div>
+            <div class="list">
+                <img src="http://climg.mukewang.com/590fe982000150ba02400135.jpg">
+                <p><a href="#">欢迎来到慕课网学习新知识！</a></p>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .per{
+            width:300px;
+            height:auto;
+            border:2px solid #aaa;
+        }
+        .li{
+            width:100px;
+            height:100px;
+            background:red;
+            margin:5px;
+            float:left;
+        }
+        .no{width:100px;
+            height:100px;
+            margin:5px;}
+    </style>
+</head>
+<body>
+    <div class="per">
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="no"></div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        body{
+            font-family: "微软雅黑";
+        }
+        .per{
+            width: 400px;
+            height: 170px;
+            border: 1px solid #CCC;
+            padding:10px;
+
+        }
+        .red{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 0px 10px 0px 0px;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="per">
+        <div class="red"></div>慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基...
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float:left;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background: blue;
+            float:right;
+        }
+        .div3{
+            width: 100px;
+            height: 100px;
+            background: green;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="div3"></div>
+    </div>
+</body>
+</html>
+ -->

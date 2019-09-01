@@ -1,0 +1,99 @@
+<!-- 函数参数 -->
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>函数的间接调用</title> 
+</head> 
+<body> 
+    <script> 
+    var data = [3,4,2,1];
+    function multiply(n1,n2,n3,n4){
+        document.write(n1 * n2 * n3 * n4)
+    }
+    multiply.apply(window,data)
+    </script> 
+</body> 
+</html>
+
+<!-- 
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>构造函数的调用</title> 
+</head> 
+<body> 
+    <script type="text/javascript"> 
+    var person = new Object({name:"xh",sex:"female"});
+    var array = new Array(1,2,3,4,5);
+    console.log(person);
+    console.log(array);
+    </script> 
+</body> 
+</html>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>方法的调用</title> 
+</head> 
+<body> 
+    <script type="text/javascript"> 
+    var person={};
+    person.setPerson=function(property,value){
+        this[property]=value;
+    }
+    person.setPerson("name","xm");
+    person.setPerson("sex","18");
+    document.write(person.sex)
+    </script> 
+</body> 
+</html>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>方法的调用</title>
+<style type="text/css">
+    #box{position: relative; width: 100px; height: 100px; 
+         background-color: red; margin: 10px auto;}
+    #close{position: absolute; right: 0px; top: -4px; color: yellow;cursor:pointer;}
+    #btn{display: block; width: 100px; margin: 0 auto;cursor:pointer;}
+</style>
+</head>
+<body>
+    <div id="box">
+        <span id="close">X</span>
+    </div>
+    <button id="btn">关闭</button>
+<script type="text/javascript">
+    var box=document.getElementById("box"),
+        close=document.getElementById("close"),
+        btn=document.getElementById("btn");
+    close.onclick=closeFun;
+    btn.onclick=closeFun;
+    function closeFun(){
+        box.style.display="none"
+    }
+</script>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>匿名函数的使用</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+(function(){
+    document.write(56-23)
+})()
+</script> 
+</body> 
+</html>
+ -->

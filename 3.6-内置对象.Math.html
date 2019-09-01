@@ -1,0 +1,63 @@
+<!-- 内置对象，Math -->
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>Math.random()</title>
+</head>
+<body>
+<script>
+    var ran=Math.floor(Math.random()*9+1),
+        num=prompt("猜一个1~9的任意整数");
+    while(ran!=num)
+    {
+        if(num>ran)
+        {alert("猜大了")}
+        else{alert("猜小了")};
+        num=prompt("猜一个1~9的任意整数");
+    }
+    alert("猜对了");
+</script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Math.random()</title>
+</head>
+<body>
+<script>
+    var arr=[],i=1,ran,max,min;
+    while(i<=10)
+    {
+        ran=Math.floor(Math.random()*101);
+        arr.push(ran);
+        i++;
+    }
+    arr=arr.sort(function(a,b){return b-a});
+    max=arr[0];
+    min=arr[arr.length-1];
+     document.write(arr+"<br/>");
+    document.write("这组数中最大的值是："+max+"，最小的值是："+min);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数字取整</title>
+</head>
+<body>
+<script>
+    var t=prompt("请输入本次运动时间"),
+        T=Math.floor(Number(t));
+        document.write("您本次运动时间为"+T+"分钟");
+</script>
+</body>
+</html>
+ -->

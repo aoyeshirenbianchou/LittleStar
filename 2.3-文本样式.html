@@ -1,0 +1,255 @@
+<!-- 文本样式 -->
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>文本样式</title>
+        <style type="text/css">
+           *{font-family:"微软雅黑";line-height:1.5em;}
+           a{color:blue;text-decoration:none;}
+           span{color:orange;}
+           hr{width:300px;margin:0;}
+           h3{font-weight:normal;}
+           .navigation{letter-spacing:0.2em;}
+        </style>
+    </head>
+    <body>
+        <h2>大话西游之大圣娶亲的影评</h2>
+        <p class="navigation"><a href="#">热门</a>&frasl;<a href="#">最新</a>&frasl;<a href="#">好友</a></p>
+        <hr/>
+        <h3><a href="#">罗弘霉素</a><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>2010&ndash;07&ndash;26</h3>
+        <p>有人跟我比赛背台词么</p>
+        <p>阅读&#58;1615<a href="#">有用</a></p>
+        <hr>
+         <h3><a href="#">十七只猫和鱼</a><span>&#9733;&#9733;&#9733;&#9733;</span>206&ndash;04&ndash;26</h3>
+        <p>任何时候任何场合都可以再看一遍的电影</p>
+        <p>阅读&#58;515<a href="#">有用</a></p>
+        <hr>
+         <h3><a href="#">暖家男</a><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>2006&ndash;04&ndash;22</h3>
+        <p>一定有一些电影永远都不能被超越</p>
+        <p>阅读&#58;490<a href="#">有用</a></p>
+        <hr>
+    </body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>文本样式</title>
+        <style type="text/css">
+           DIV{text-align:center;background-color:#eee;font-size:2en;line-height:5em;}
+           .zh{font-size:2em;}
+           .en{text-transform:capitalize;text-decoration:underline;color:red;}
+           img,span{vertical-align:middle;}
+        </style>
+    </head>
+    <body>
+        <DIV>
+        <IMG SRC="http://climg.mukewang.com/59c21bae000157fa01000059.jpg"><IMG><SPAN class="zh">CSS层叠样式</span><span class="en">(cascading style sheets)</SPAN>
+        </DIV>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+   <meta charset="UTF-8">
+   <title>vertical-align</title>
+   <style type="text/css">
+    *{padding:0px;margin: 0px;}
+   
+    .warp1{    
+              height:80px;
+              width: 100%;
+              background-color: #14191e;
+              display:table;
+              text-align:center;
+             }
+
+     .warp1 h1{ color:#fff;
+                display:table-cell;
+                vertical-align:middle;
+                }
+
+     .warp2{
+              height:400px;
+              width: 100%;
+              border:1px  #14191e solid;
+              display:table; 
+             }
+
+     .content{    
+              display:table-cell; 
+              vertical-align:middle;
+              }
+
+     .content  p{ width:400px;
+                  font-family: "微软雅黑";
+                  margin:0 auto;
+     }   
+
+   </style>
+</head>
+<body>
+<div class="warp1">
+          <h1>欢迎来到慕课网</h1>      
+</div>
+  <div class="warp2">
+        <div class="content">
+           <p>慕课网，只学有用的！</p>
+           <p>慕课网（IMOOC）是IT技能学习平台。慕课网(IMOOC)提供了丰富的移动端开发、php开发、web前端、android开发以及html5等视频教程资源公开课。并且富有交互性及趣味性，你还可以和朋友一起编程。</p>
+        </div>
+</div>    
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>line-height属性</title>
+        <style type="text/css">
+           *{font-family:"微软雅黑";}
+           p{text-indent:2em;}
+           .p1{color:orange;line-height:20px;}
+           .p2{color:green;line-height:1.5em;}
+           .p3{color:red;line-height:200%;}
+        </style>
+    </head>
+    <body>
+        
+        <div>
+            <h2>1.《三体》</h2>
+            <p class="p1">
+              《三体》是刘慈欣创作的系列长篇科幻小说，由《三体》、《三体Ⅱ•黑暗森林》、《三体Ⅲ•死神永生》组成，第一部于2006年5月起在《科幻世界》杂志上连载，第二部于2008年5月首次出版，第三部则于2010年11月出版。
+              作品讲述了地球人类文明和三体文明的信息交流、生死搏杀及两个文明在宇宙中的兴衰历程。其第一部经过刘宇昆翻译后获得了第73届雨果奖最佳长篇小说奖。
+            </p>           
+        </div>
+        <div>
+            <h2>2.《盗墓笔记》</h2>
+            <p class="p2">
+              《盗墓笔记》系列是南派三叔的代表作，其堪称近年来中国出版界的经典之作，获得百万读者狂热追捧。南派三叔也凭此作名满天下，跻身中国超级畅销书作家行列。
+            </p>           
+        </div>
+        <div>
+            <h2>3.《福尔摩斯侦探小说全集》</h2>
+            <p class="p3">
+              本套书分为上中下三卷，主要章节包括了上卷：血字分析、第一部 原陆军军医部医学博士约翰•H•华生回忆录、第二部 圣徒的故园、四签名、冒险史、巴斯克维尔的猎犬；中卷：回忆录、福尔摩斯的归来；下卷：最后奉献、恐怖谷、第一部 伯尔斯通的悲剧、第二部 亡命党徒、新探索详细内容。
+            </p>           
+        </div>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>文本对齐方式</title>
+    <style type="text/css">
+        *{text-align:right;}
+        p{text-align:center;}
+    </style>
+</head>
+<body>
+    <img src="http://climg.mukewang.com/58c137930001b08102000065.jpg">
+    <p>慕课网课程涵盖前端开发PHP、Android、iOS、swift等IT前言技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。</p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>font简写</title>
+    <style type="text/css">
+        p{font:italic small-caps bold 20px "黑体";}
+        div{color:blue;font-variant:small-caps;font-weight:bold;}
+    </style>
+</head>
+<body>
+    <p>Web前端攻城狮(Web&nbsp;front&nbsp;siege&nbsp;lion)</p>
+    <div>CSS前端攻城狮(Cascading&nbsp;style&nbsp;sheet)</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>文字样式设置</title>
+    <style>
+        p{color:blue;font-family:"微软雅黑";font-size:2em;}
+        .a{font-weight:bold;}
+        .b{font-style:italic;}
+        .c{font-variant:small-caps;}
+    </style>
+</head>
+<body>
+    <p class="a">font-weight属性规定字体的粗细</p>
+    <p class="b">font-style属性规定字体的样式</p>
+    <p class="c">font-variant属性设置文本字体为小型大写字母</p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>color</title>
+        <style type="text/css">
+           div{font-size:20px;}
+           h3{color:rgb(255,0,0);font-family:"宋体";font-size:1.5em;}
+           p{font-family:"微软雅黑";}
+           span{color:#511015;font-size:2em;}
+        </style>
+    </head>
+    <body>
+        <div>
+           <h3>CSS层叠样式表</h3>
+           <p>
+                <span>CSS</span>目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。相对于传统HTML的表现而言，CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群，有较强的易读性。
+           </p>
+        </div>      
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>font-size</title>
+        <style type="text/css">
+           h3{font-family:"宋体";font-size:2em;}
+           p{font-family:"微软雅黑";font-size:1.5em;}
+           a{font-size:1.5em;}
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>web前端工程师</h3>
+            <p class="em">
+                 <a href="#">Web前端开发工程师</a>，主要职责是利用HTML/CSS/JavaScript/Flash等各种Web技术进行客户端产品的开发。完成客户端程序（也就是浏览器端）的开发，开发JavaScript以及Flash模块，同时结合后台开发技术模拟整体效果，进行丰富互联网的Web开发，致力于通过技术改善用户体验。
+            </p>
+        </div>      
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>font-family</title>
+        <style type="text/css">
+            h3{font-family:"宋体","serif";}
+        </style>
+    </head>
+    <body>
+        <h3>CSS样式表</h3>
+        <p tyle="font-family:'微软雅黑','隶书'"><!--补充样式-->
+           CSS目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。相对于传统HTML的表现而言，CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群，有较强的易读性。
+        </p>
+    </body>
+</html>
+ -->

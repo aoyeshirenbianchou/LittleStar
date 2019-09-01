@@ -1,0 +1,50 @@
+*{
+	margin:0;
+	font-family:"微软雅黑";
+	text-align:center;
+}
+p{
+	line-height:80px;
+}
+/*图片边框*/
+.img img{
+	border:10px solid #bbb;
+	display:none;
+}
+/*圆点*/
+.dot{
+	width:200px;
+	position:relative;
+	top:-50px;
+	right:-1100px;
+	z-index:999;
+}
+.dot div{
+	width:10px;
+	height:10px;
+	background-color:rgba(0,0,0,0.2);
+	border:1px solid #fff;
+	margin-right:10px;
+	border-radius:10px;
+	float:left;
+}
+/*上下张切换按钮*/
+.pre,.next{
+	width:40px;
+	height:60px;
+	position:absolute;
+	top:300px;
+}
+.pre img,.next img{
+	position:relative;
+	top:15px;
+}
+.pre{
+	left:100px;
+}
+.next{
+	right:100px;
+}
+.pre:hover,.next:hover{
+	background-color:rgba(0,0,0,0.3);
+}

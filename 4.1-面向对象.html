@@ -1,0 +1,232 @@
+<!-- 面向对象 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-4</title>
+</head>
+<body>
+<script>
+function Class(){
+    var roster=[
+    {name:"张宇",sex:"男",age:"18"}
+    ];
+    this.set=function(name,sex,age){
+        student=new Object();
+        student.name=name;
+        student.sex=sex;
+        student.age=age;
+        roster.push(student);
+    }
+    this.get=function(iOn){
+        if(isNaN(+iOn+1)){
+            for(var i=0;i<roster.length;i++){
+                roster[i].name==iOn?
+                document.write("编号："+i+"，姓名："+roster[i].name+"，性别："+roster[i].sex+"，年龄："+roster[i].age):
+                i;
+            }
+        }else{
+            console.log("进入搜索");
+            var i=parseInt(iOn);
+            document.write("编号："+i+"，姓名："+roster[i].name+"，性别："+roster[i].sex+"，年龄："+roster[i].age);
+        }
+    }
+}
+var class1=new Class();
+class1.set("张三","男","20");
+class1.get("张三");
+</script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function acount(){
+            var result=0;
+            for(var i=0;i<arguments.length;i++){
+                result+=+arguments[i];
+            }
+            alert(result);
+        }
+        acount(1,2,3,4,5);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var a=["Are","you"],
+            b=["going","to","Scarborough","fair"];
+        a.push.apply(a,b);
+        var str=a.join(" ");
+        alert(str);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>  
+        function Animal(){
+            this.species="mammal";
+            this.region="China";
+            this.getInfo=function(){
+                document.write(this.species+","+this.region)
+            }
+            this.say=function(pet,food){
+                this.name=pet;
+                document.write(this.name+" likes to eat "+food);
+            }
+        };
+        var animal=new Animal();
+        var cat=new Object();
+        animal.say.call(cat,"cat","fish");
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function animal(){
+            this.species="mammal";
+            this.region="China";
+            this.getInfo=function(){
+                document.write(this.species+","+this.region)
+            }
+        };
+        var cat=new animal(),
+            dog=new animal();
+        cat.getInfo();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function animal(){
+            animal.prototype.species="mammal";
+            animal.prototype.region="China";
+        };
+        var cat=new animal();
+        cat.info=function(attr){
+            alert(cat[attr]);
+        };
+        cat.info("region");
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 工厂模式
+        function creatObj(name){
+            var obj=new Object();
+            obj.name=name;
+            obj.action=function(){alert("前端")};
+            return obj;
+        }
+        var obj1=creatObj("imooc");
+        // 原型模式
+        function creatObj(name){
+            createObj.prototype.name="name";
+            createObj.prototype.action=function(){alert("前端")};
+        };
+        var obj2=creatObj("imooc");
+        // 混合模式
+        
+        
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">  
+        // json格式
+        var imooc={
+            name:"imooc",
+            action:function(){alert("前端")}
+        }
+        // Object方式
+        var imooc=new Object();
+        imooc.name="imooc";
+        imooc.action=function(){alert("前端")};
+        // 构造函数方式
+        function imooc(){
+            this.name="imooc";
+            this.action=function(){alert("前端")};
+        }
+        var imooc1=new imooc();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-1</title>
+    <style>
+        li{list-style:none;}
+        li:hover{cursor:pointer;}
+    </style>
+</head>
+<body>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <script>
+        var li=document.getElementsByTagName("li");
+        for(var i=0,len=li.length;i<len;i++){
+            (function(i){
+               li[i].onclick=function(){
+                   alert(i);
+               }
+            })(i)
+        }
+    </script>
+</body>
+</html>
+ -->

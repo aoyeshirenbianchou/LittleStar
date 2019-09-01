@@ -1,0 +1,109 @@
+<!-- Promise -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+{
+//函数嵌套写法
+const srcs=["http://climg.mukewang.com/5b16558d00011ed506000338.jpg","http://climg.mukewang.com/5b165603000146ca06000338.jpg ","http://climg.mukewang.com/5b1656140001c89906000338.jpg"];   
+function appendImg(cb){ 
+    setTimeout(function(){
+        cb&&cb()
+    },1000)
+}
+appendImg(function(){
+    let body=document.getElementsByTagName("body")[0],
+        img=new Image(300,200),
+        count=0;
+    img.src=srcs[count];
+    body.appendChild(img);
+    appendImg(function(){
+        count+=1;
+        let img=new Image(300,200);
+        img.src=srcs[count];
+        body.appendChild(img);
+        appendImg(function(){
+            count+=1;
+            let img=new Image(300,200);
+            img.src=srcs[count];
+            body.appendChild(img);
+        })
+    })
+})
+}
+
+{
+//promise写法
+const srcs=["http://climg.mukewang.com/5b16558d00011ed506000338.jpg","http://climg.mukewang.com/5b165603000146ca06000338.jpg ","http://climg.mukewang.com/5b1656140001c89906000338.jpg"];
+function appendImg(src){
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            let img=new Image(300,200);
+            img.src=src;
+            document.getElementsByTagName("body")[0].appendChild(img);
+            resolve()
+        },1000)
+    })
+}
+appendImg(srcs[0])
+.then(()=>{return appendImg(srcs[1])})
+.then(()=>{return appendImg(srcs[2])})
+}
+
+//两个代码块放在一起之后形成了两个异步
+</script>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+    
+    function cook() {
+        console.log('开始做饭。');
+        var p = new Promise(function(resolve, reject){ 
+            setTimeout(function() {
+                console.log('做饭完毕！');
+                resolve('鸡蛋炒饭');
+            }, 1000);
+        });
+        return p;
+    }
+    
+    function eat(data) {
+        console.log('开始吃饭：' + data);
+        var p = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                console.log('吃饭完毕!');
+                resolve('一块碗和一双筷子');
+            }, 2000);
+        });
+        return p;
+    }
+    function wash(data) {
+        console.log('开始洗碗：' + data);
+        var p = new Promise(function(resolve, reject) { 
+            setTimeout(function() {
+                console.log('洗碗完毕!');
+                resolve('干净的碗筷');
+            }, 2000);
+        });
+        return p;
+}
+cook()
+.then(data=>{return eat(data)})
+.then(data=>{return wash(data)})
+</script>
+</body>
+</html>
+ -->

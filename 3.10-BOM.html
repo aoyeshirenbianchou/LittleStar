@@ -1,0 +1,258 @@
+<!-- BOM对象，window、location、history、screen、navigator -->
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>setInterval()</title>
+        <style type="text/css">
+            div{
+                width:300px;
+                height:300px;
+                border:1px solid #333;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="开始">
+        <br><br>
+        <div></div>
+        <script type="text/javascript">
+           var butt=document.getElementsByTagName("input")[0],
+               div=document.getElementsByTagName("div")[0];
+           butt.onclick=function()
+           {
+               var text="hello ";
+               setInterval(fun,1000);
+               function fun()
+               {
+                   div.innerHTML=text;
+                   text=text+"hello ";
+               }
+           }
+        </script>
+    </body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>闪烁的文字</title>
+        <style type="text/css">
+            div{
+                width:200px;
+                height:200px;
+                line-height:200px;
+                border:2px solid gray;
+                text-align:center;
+                color:red;
+            }
+        </style>
+    </head>
+<body>
+    <h3>会闪烁的文字</h3>
+        <div id="text"></div>
+        <script type="text/javascript">
+            var text=document.getElementsByTagName("div")[0],n=0;
+            setInterval(fun,500);
+            function fun()
+            {
+                n=n+1;
+                n%2==0?text.innerHTML="★★★今日特卖★★★":text.innerHTML="☆☆☆今日特卖☆☆☆";
+            }
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style type="text/css">
+        div{width:400px;height:120px;margin-top:50px;border:2px solid gray;padding:10px;}
+    </style>
+</head>
+<body>
+    <input type="button" value="删除">
+    <input type="button" value="取消删除">
+    <div>点击"删除"按钮后，里面的内容将在3秒钟后消失；<br/><br/>如点击了"删除"后又不想删除内容，请在点击"删除"按钮3秒之内点击"取消删除"按钮即可</div>
+    <script type="text/javascript">
+        var dele=document.getElementsByTagName("input")[0],
+            cancel=document.getElementsByTagName("input")[1],
+            text=document.getElementsByTagName("div")[0];
+        dele.onclick=function()
+        {
+            settime=setTimeout("text.innerHTML=null",3000)
+        };
+        cancel.onclick=function()
+        {
+            clearTimeout(settime)
+        };  
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>打开/关闭页面</title>
+    </head>
+    <body>
+       <input type="button" value="打开页面">
+       <script type="text/javascript">
+           var btn=document.getElementsByTagName("input");
+           btn[0].onclick=function()
+           {
+               var conf=confirm("是否打开页面？");
+               conf?window.open("http://www.luoo.net/","luoo","width=300px,height=300px,top=200px,left=600px,toolbar=no,scrollbars=no,locationbar=no,menubar=no"):window.close();
+           }
+       </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>打开/关闭页面</title>
+    </head>
+    <body>
+       <input type="button" value="关闭本页面" id="close">
+       <input type="button" value="打开慕课网" id="open">
+       <script type="text/javascript">
+           var closebtn=document.getElementById("close"),
+               openbtn=document.getElementById("open");
+            closebtn.onclick=function()
+            {window.close()};
+            openbtn.onclick=function()
+            {window.open("http://www.imooc.com")};
+       </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>输入框</title>
+    </head>
+    <body>
+        <input type="button" value="点击" onclick="fun()">
+        <script type="text/javascript">
+            function fun()
+            {
+                var 
+                conf=window.confirm("确认删除吗？"),
+                butt=document.getElementsByTagName("input");
+                conf?butt[0].style.color="red":butt[0].style.color="green";
+            }
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>输入框</title>
+    </head>
+    <body>
+        <input type="button" value="点击" onclick="fun()">
+        <script type="text/javascript">
+            function fun()
+            {
+                var tex=window.prompt("请输入文字\n当点击确定时\n按钮会显示输入的文字");
+                var butt=document.getElementsByTagName("input");
+                butt[0].value=tex;
+            }
+        </script>
+    </body>
+</html>
+ -->
+
+<!-- location、history、screen、navigator -->
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>location方法</title>
+    </head>
+    <body>
+        <input type="button" value="操作页面" id="ck">
+        <script type="text/javascript">
+           var btn=document.getElementById("ck");
+           btn.onclick=function()
+           {
+               var conf=confirm("刷新页面吗？");
+               conf?
+               location.reload():
+               location.replace("http://www.imooc.com");
+           }
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+      <meta charset="UTF-8">
+      <title>location方法</title>
+      <style type="text/css">
+        input{
+          border:none;
+          width:80px;
+          height:80px;
+          background-color:black;
+          color:white;
+          font-family:"微软雅黑";
+          margin:auto;
+          position:absolute;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+        }
+      </style>
+    </head>
+    <body>
+      <input type="button" value="页面2" id="page2">
+      <script type="text/javascript">
+        var btn=document.getElementById("page2");
+        btn.onclick=function()
+        {
+          location.href="http://www.luoo.net/";
+        }
+      </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>userAgent</title>
+    </head>
+    <body>
+       <input type="button" value="点击获取浏览器信息" id="browser">
+       <script type="text/javascript">
+           function fun()
+           {
+               var info=navigator.userAgent,
+                   browser=null;
+                info=info.toLowerCase();
+                if(info.indexOf("chrome")>-1)
+                {browser="chrome"}
+                else if(info.indexOf("msie")>-1)
+                {browser="IE"};
+                return browser;
+           }
+           var btn=document.getElementById("browser");
+           btn.onclick=function(){alert("您所使用的是"+fun()+"浏览器")};
+       </script>
+    </body>
+</html>
+-->

@@ -1,0 +1,193 @@
+<!-- 多列布局 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .word1>.test p,.word1>.test div,.word2>.test p,.word2>.test div{
+            margin:0;
+            padding:5px 10px;
+            background:#eee;
+            font-size:12px;
+        }
+        h1{
+            margin:10px 0;
+            font-size:12px;
+        }
+        .word1>.test,.word2>.test{
+            width:600px;
+            border:10px solid #000;
+            -moz-column-count:4;
+            -moz-column-gap:20px;
+            -moz-column-rule:3px solid #090;
+            -webkit-column-count:4;
+            -webkit-column-gap:20px;
+            -webkit-column-rule:3px solid #090;
+            column-count:4;
+            column-gap:20px;
+            column-rule:3px solid #090;
+        }
+        .word1>.test div{
+            -webkit-column-break-before:always;
+        }
+        .word2>.test div{
+            -webkit-column-break-after:always;
+        }
+    </style>
+</head>
+<body>
+    <div class="word1">
+        <h1>column-break-before:always</h1>
+        <div class="test">
+            <p>This module describes multi-column layout in CSS. By using functionality described in this document, style sheets can declare that the content of an element is to be laid out in multiple columns.</p>
+            <div>不管上一列有没有填满，我都另起一列</div>
+            <p>This module describes multi-column layout in CSS. By using functionality described in this document, style sheets can declare that the content of an element is to be laid out in multiple columns.</p>
+        </div>
+    </div>
+    <div class="word2">
+        <h1>column-break-after:always</h1>
+        <div class="test">
+            <p>This module describes multi-column layout in CSS. By using functionality described in this document, style sheets can declare that the content of an element is to be laid out in multiple columns.</p>
+            <div>不管上一列有没有填满，我都另起一列</div>
+            <p>This module describes multi-column layout in CSS. By using functionality described in this document, style sheets can declare that the content of an element is to be laid out in multiple columns.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+        .newspaper{
+            width:600px;
+            column-count:3;
+            -moz-column-count:3;
+            -webkit-column-count:3; 
+            font-size:12px;
+        }
+        h4{
+           column-span:all;
+        }
+        </style>
+    </head>
+<body>
+    <div class="newspaper">
+        <h4>成品油价格25日凌晨上调 汽柴油涨300、290元/吨</h4>
+        人民网北京2月24日电 (记者 刘阳)国家发展改革委近日发出通知，决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和0.25元。此次国内成品油价格调整幅度，是按照现行国内成品油价格形成机制，根据国际市场油价变化情况确定的。去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前景向好以及中东局势持续动荡等因素影响，国际市场原油价格先抑后扬，2月上旬WTI和布伦特原油期货价格再次回升至每桶95美元和115美元以上。
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      .newspaper{
+                column-count:3;
+           -moz-column-count:3; 
+        -webkit-column-count:3; 
+                column-gap:40px;
+           -moz-column-gap:40px;
+        -webkit-column-gap:40px; 
+                column-rule:medium solid red;
+           -moz-column-rule:medium solid red;
+        -webkit-column-rule:medium solid red;
+      }
+    </style>
+  </head>
+<body>
+    <div class="newspaper">
+       慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style type="text/css">
+            body {
+                font-family: "微软雅黑";
+            }
+            p {
+                margin: 0;
+                padding: 5px 10px;
+                background: #eee;
+                column-count:2;
+            }
+            h1 {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            div{
+                border: 10px solid #000;
+                width:600px;
+                text-align:justify;
+            }
+            .st p{
+                column-gap:normal;
+            }
+            .nd p{
+                column-gap:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>normal等于font-size</h1>
+        <div class="st">
+            <p>慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。</p>
+        </div>
+        <h1>normal等于font-size</h1>
+        <div class="nd">
+            <p>慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。</p>
+        </div>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style type="text/css">
+        .columns{
+            width:400px;
+            border:5px solid pink;
+        }
+        .columns .title{
+            font-size:14px;
+            font-weight:bold;
+            background-color:pink;
+            text-align:center;
+            padding:5px;
+        }
+        .columns .column_width{
+            font-size:12px;
+            text-align:justify;
+            columns:140px 2;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+   <div class="columns">
+        <div class="title">慕课网</div>
+        <div class="column_width">
+           慕课网(IMOOC)是IT技能学习平台。慕课网(IMOOC)提供了丰富的移动端开发、php开发、web前端、android开发以及html5等视频教程资源公开课。并且富有交互性及趣味性
+        </div>
+    </div>
+</body>
+</html>
+ -->

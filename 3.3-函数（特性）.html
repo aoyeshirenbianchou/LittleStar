@@ -1,0 +1,103 @@
+<!-- 函数 -->
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>函数定义的位置</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+var arg1=prompt("请输入第一个数字","0"),
+    arg2=prompt("请输入第二个数字","0");
+add(arg1,arg2);
+function add(arg1,arg2){
+    if(isNumber(arg1)||isNumber(arg2)){
+        document.write(isNumber(arg1) + "+" + isNumber(arg2) + "=" + (isNumber(arg1) + isNumber(arg2)))
+    }else{
+        alert("请输入非零数字")
+    }
+    function isNumber(arg){
+        if(typeof(parseFloat(arg))=="number"){
+            return parseFloat(arg);
+        }else{
+            return false;
+        }
+    }
+}
+</script> 
+</body> 
+</html>
+
+<!-- 
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>函数定义的位置</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+var family={
+    me:"小明",
+    wife:"小花",
+    baby:{
+        bornTime:"10monthLater",
+        name
+    },
+    setBaby:function(sex){
+        if(sex=="male"){this.baby.name="牛牛"}
+        else if(sex=="female"){this.baby.name="妞妞"}
+    }
+}
+family.setBaby("female");
+document.write(family.baby.name)
+</script> 
+</body> 
+</html>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>三种定义方式</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+var add=function(arg1,arg2){return arg1+arg2};
+var sub=function(arg1,arg2){return arg1-arg2};
+document.write(sub(add(21,32),24));
+</script> 
+</body>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>三种定义方式</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+function add(arg1,arg2){return arg1+arg2};
+function sub(arg1,arg2){return arg1-arg2};
+document.write(sub(add(21,32),24));
+</script> 
+</body> 
+</html>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>三种定义方式</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+var add=new Function("arg1","arg2","return arg1+arg2");
+var sub=new Function("arg1","arg2","return arg1-arg2");
+var mul=new Function("arg1","arg2","return arg1*arg2");
+var div=new Function("arg1","arg2","return arg1/arg2");
+document.write(sub(add(mul(21,32),div(24,3)),5));
+</script> 
+</body> 
+</html>
+ -->

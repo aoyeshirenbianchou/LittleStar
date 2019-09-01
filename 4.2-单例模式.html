@@ -1,0 +1,82 @@
+<!-- 单例模式 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>惰性单例模式</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-color: #f0f0f0;
+    }
+    /*注册框*/
+    #registLayer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -150px;
+        margin-left: -150px;
+        width: 400px;
+        height: 300px;
+        background-color: #fff;
+    }
+    </style>
+</head>
+<body>
+    <button id="registBtn">注册</button>
+    <script type="text/javascript">
+    //btn被点击时创建注册层
+        var btn=document.querySelector("#registBtn");
+        btn.onclick=showLayer;
+        
+        function showLayer(){
+            //判断节点是否已经被创建过，并创建节点
+            var registLayer=(function(){
+                var node=null;
+                if(!node){
+                    node=document.createElement("div");
+                    node.id="registLayer";
+                    node.innerHTML="注册";
+                    node.style.display="none";
+                    document.body.appendChild(node);
+                    return node;
+                };
+                return node;
+            })();
+            //显示节点
+            registLayer.style.display="block";
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var person=(function(){
+            var instance=null;
+            return function(){
+                if(!instance){
+                    this.name="lily";
+                    this.id=Math.random();
+                    return instance=this;
+                }
+                return instance;
+            }
+        })();
+        var person1=new person(),
+            person2=new person();
+        alert(person1==person2);
+    </script>
+</body>
+</html>
+ -->

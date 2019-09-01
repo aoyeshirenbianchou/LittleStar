@@ -1,0 +1,101 @@
+<!-- 函数参数 -->
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title> arguments</title> 
+</head> 
+<body> 
+   <p id="test" style="background-color: red; color: blue;">我是一个段落！</p>
+<script type="text/javascript"> 
+function css(ele,pro,value){
+    if(arguments.length==2){
+        document.write(pro+" : "+ele.style[pro]);
+    }else{
+        ele.style[pro]=value;
+    }
+}
+var test=document.getElementById("test");
+css(test,"color","white");
+</script> 
+</body> 
+</html>
+
+<!-- 
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title></title> 
+</head> 
+<body> 
+    <script> 
+var data=[3,2,6,33,-2];
+function min(){
+    for(var i=0,minNum=arguments[0];i<arguments.length;i++){
+        arguments[i]<=minNum?
+        minNum=arguments[i]:
+        minNum;
+    }
+    return minNum;
+}
+document.write(min.apply(this,data))
+    </script> 
+</body> 
+</html>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>参数的个数</title> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+var data=[3,2,6,33,-2];
+function min(){
+    for(var i=0,minNum=arguments[0];i<arguments.length;i++){
+        arguments[i]<=minNum?
+        minNum=arguments[i]:
+        minNum;
+    }
+    return minNum;
+}
+document.write(min.apply(this,data))
+</script> 
+</body> 
+</html>
+
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <title>什么可以做返回值</title> 
+</head> 
+<body> 
+   <script type="text/javascript"> 
+function add(arg1,arg2){
+    return arg1+arg2;
+}
+function sub(arg1,arg2){
+    return arg1-arg2;
+}
+function multi(arg1,arg2){
+    return arg1*arg2;
+}
+function divi(arg1,arg2){
+    return arg1/arg2;
+}
+function caculate(arg1,arg2){
+    return [
+        add(arg1,arg2),
+        sub(arg1,arg2),
+        multi(arg1,arg2),
+        divi(arg1,arg2)
+    ]
+}
+document.write("5 "+"加、减、乘、除"+" 2 "+"的结果是"+caculate(5,2).join(" / "))
+    </script> 
+</body> 
+</html>
+ -->

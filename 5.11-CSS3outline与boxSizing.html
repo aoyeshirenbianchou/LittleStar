@@ -1,0 +1,124 @@
+<!-- outline、boxSizing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+/*
+.mask{
+    width:200px;
+    margin:100px auto;
+    border:5px solid #ccc;
+    background: #ccc;
+}
+.confirm{
+    border:1px solid #fff;
+    background: #fff;
+    border-radius:20px;
+    overflow:hidden;
+    text-align: center;
+}
+.confirm-text{
+    border-bottom:1px solid #ccc;
+}
+.confirm-btn{
+    display:inline-block;
+    box-sizing:border-box;
+    width:50px;
+    
+}
+.confirm-btn:active{
+    
+}
+.confirm-btn-sure{
+    border-right: 1px solid rgb(235,235,235);
+}
+*/
+*{
+    margin:0;
+    padding:0;
+}
+.mask{
+    width:200px;
+    height:50px;
+    background-color:#ddd;
+    text-align:center;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    padding:10px;
+}
+.confirm{
+    width:200px;
+    height:50px;
+    background-color:#fff;
+    box-sizing:border-box;
+    border-radius:25px;
+    border:1px solid white;
+    overflow:hidden;
+}
+.confirm-text{
+    height:25px;
+    border-bottom:1px solid #eee;
+    box-sizing:border-box;
+}
+.confirm-btn{
+    float:left;
+    width:99px;
+    height:25px;
+    box-sizing:border-box;
+}
+.sure{
+    border-right:0.5px solid #eee;
+}
+.cancel{
+    border-left:0.5px solid #eee;
+}
+.confirm-btn:hover{
+    background-color:#eee;
+    cursor:pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="mask">
+        <div class="confirm">
+            <div class="confirm-text">提示信息</div>
+            <div class="confirm-btn sure">确定</div>
+            <div class="confirm-btn cancel">取消</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+        width:100px;
+        height:100px;
+        background-color:pink;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin:auto;
+        outline:50px solid #eee;
+        outline-offset:-88px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+ -->

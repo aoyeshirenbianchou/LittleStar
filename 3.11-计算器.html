@@ -1,0 +1,83 @@
+<!-- 计算器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style type="text/css">
+    body,html{width:100%;height:100%;}
+    body{display:flex;justify-content:center;align-items:center;}
+    </style>
+</head>
+<body> 
+    <div>
+        <input type='text' id='num1' />
+        <select id='operate'>
+            <option value='+'>+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type='text' id='num2' />
+        <input type='button' value=' = ' onclick="count()"/>
+        <input type='text' id='result' />
+    </div>
+
+    <script type="text/javascript">
+        function count(){
+            var num1 = document.getElementById("num1").value,
+                num2 = document.getElementById("num2").value;
+            operate(num1,num2);
+            function operate(num1,num2){
+                var select = document.getElementById("operate").value,
+                    result = document.getElementById("result");
+                switch(select){
+                    case "+":result.value = +num1 +　+num2;
+                    break
+                    case "-":result.value = num1 -　num2;
+                    break
+                    case "*":result.value = num1 *　num2;
+                    break
+                    case "/":result.value = num1 /　num2;
+                    break
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        请选择菜单：
+        <select id="menu">
+            <option>请选择</option>
+            <option value="fruit">水果</option>
+            <option value="cake">蛋糕</option>
+            <option value="nuts">坚果</option>
+        </select>
+    </p>
+    <p>该系列有：<span></span></p>
+    <script>
+    var menu = document.getElementById("menu"),
+        span = document.querySelector("span");
+    menu.onchange=changeText;
+    function changeText(){
+        var option={
+            fruit:"苹果、香蕉、橘子、西瓜",
+            cake:"慕斯、奶酪、海绵、戚风",
+            nuts:"碧根果、巴旦木、开心果、腰果"
+        }
+        span.innerHTML=option[menu.value];
+    }
+    </script>
+</body>
+</html>
+ -->

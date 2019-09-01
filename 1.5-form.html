@@ -1,0 +1,312 @@
+<!-- 
+天呐！！！受表格布局荼毒不浅！！！浪费了多少时间写这些东西啊！！
+表单标签、属性的各种练习
+包括文本密码文件下拉菜单多选单选等
+-->
+<!doctype html>
+<html>
+<head>
+    <title>表单章节末练习</title>
+    <meta http-equiv="content type" content="text/html;charset=utf-8">
+</head>
+<body>
+    <h3 align="center">注册信息</h3>
+    <hr>
+    <form>
+    <table bgcolor="#f2f2f2" align="center">
+        <tr>
+            <td align="right" valign="top">姓名：</td>
+            <td align="left" valign="top">
+                <input type="text" placeholder="请输入名字" size="20"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">邮箱：</td>
+            <td align="left" valign="top">
+                <input type="text" value="@163.com" size="20"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">密码：</td>
+            <td align="left" valign="top">
+                <input type="password" placeholder="请输入密码" size="20"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">确认密码：</td>
+            <td align="left" valign="top">
+                <input type="password" placeholder="请再次输入密码" size="20"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">上传照片：</td>
+            <td align="left" valign="top">
+                <input type="file" name="photo" valu="photo" title="选择文件">
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">性别：</td>
+            <td align="left" valign="top">
+                男<input type="radio" name="sex" value="man">&nbsp;&nbsp;
+                女<input type="radio" name="sex" value="woman">&nbsp;&nbsp;
+                保密<input type="radio" name="sex" value="secrecy" checked>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">爱好：</td>
+            <td align="left" valign="top">
+                读书<input type="checkbox" name="hobby" value="read">&nbsp;&nbsp;
+                跳舞<input type="checkbox" name="hobby" value="dance">&nbsp;&nbsp;
+                唱歌<input type="checkbox" name="hobby" value="sing">
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">运动：</td>
+            <td align="left" valign="top">
+                跑步<input type="checkbox" name="sports" value="run">&nbsp;&nbsp;
+                篮球<input type="checkbox" name="sports" value="basketball">&nbsp;&nbsp;
+                跳绳<input type="checkbox" name="sports" value="rope skipping">
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">城市：</td>
+            <td align="left" valign="top">
+                <select>
+                    <option selected>--请选择--</option>
+                    <optgroup label="华北">
+                        <option>北京</option>
+                        <option>天津</option>
+                        <option>河北</option>   
+                    </optgroup>
+                    <optgroup label="华东">
+                        <option>上海</option>
+                        <option>福建</option>
+                        <option>厦门</option>
+                    </optgroup>                    
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right" valign="top">简介：</td>
+            <td align="left" valign="top">
+                <textarea placeholder="请输入个人介绍" rows="3" cols="20"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center" valign="middle">
+                <inpu type="button" value="来点我">
+                <inpu type="submit" value="submit">
+                <inpu type="reset" value="reset">
+                <inpu type="image" src=imagelibrary/image1 width="20px">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
+<!-- 
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content type" content="text/html;charset=UTF-8"/>
+    <title>分组下拉菜单</title>
+</head>
+<body>
+    <form>
+        <select>
+            <option>--请选择--</option>
+            <optgroup label="水果">
+              <option>苹果</option>
+              <option>猕猴桃</option>
+              <option>杏子</option>
+            </optgroup>
+            <optgroup label="蔬菜">
+            <option>西红柿</option>
+            <option>白菜</option>
+            <option>油麦菜</option>
+            </label>
+        </select>
+    </form>
+</body>
+</html>
+ -->
+ <!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <p>下拉菜单：</p>
+    <form>
+        <select>
+            <option value="panda">熊猫</option>
+            <option value="cat">猫</option>
+            <option value="dog">狗</option>
+            <option value="pig">猪</option>
+            <option value="monkey">猴子</option>
+        </select>
+        <table>
+            <tr>
+                <td valign="top" align="center">
+                <p>列表：</p>
+                <select size="3">
+                <option value="panda">熊猫</option>
+                <option value="cat">猫</option>
+                <option value="dog">狗</option>
+                <option value="pig">猪</option>
+                <option value="monkey">猴子</option>
+                </select>
+                </td>
+                
+                <td valign="top" align="center">
+                <p>下拉菜单：</p>
+                <select size="5">
+                <option value="panda" name="list">熊猫</option>
+                <option value="cat" name="list">猫</option>
+                <option value="dog" name="list">狗</option>
+                <option value="pig" name="list">猪</option>
+                <option value="monkey" name="list">猴子</option>
+                </select>
+                </td>
+                
+                <td valign="top" align="center">
+                <p>列表项：</p>
+                <select size="5" multiple>
+                <option value="panda" name="list">熊猫</option>
+                <option value="cat" name="list">猫</option>
+                <option value="dog" name="list">狗</option>
+                <option value="pig" name="list">猪</option>
+                <option value="monkey" name="list">猴子</option>
+                </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+  -->
+  <!-- 
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <h1 align="center">注册信息</h1>
+        <hr color="#336699">
+        <form>
+            <table bgcolor="#f2f2f2" width="600px" align="center">
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" name="username" size="25" maxlength="6" placeholder="请输入用户名" /></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="password" name="paw" size="25" maxlength="6" placeholder="请输入密码" /></td>
+                </tr>
+                <tr>
+                    <td>确认密码：</td>
+                    <td><input type="password" name="paw" size="25" maxlength="6" placeholder="请重新输入密码" /></td>
+                </tr>
+                <tr>
+                    <td>上传照片：</td>
+                    <td><input type="file" name="file" /></td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td><input type="radio" name="sex" value="man" />男
+                        <input type="radio" name="sex" value="woman" checked="checked" />女
+                    </td>
+                </tr>
+                <tr>
+                    <td>爱好：</td>
+                    <td><input type="checkbox" name="fx" value="basketball" checked="checked" />篮球<input type="checkbox" name="fx" value="football" />足球<input type="checkbox" name="fx" value="volleyball" />排球</td>
+                </tr>
+                <tr>
+                    <td>
+                    <input type="button" value="点我">
+                    <input type="submit" value="提交">
+                    <input type="reset" value="重置">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+   -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+    <h1 align="center">注册信息</h1>
+    <hr color="#336699">
+    <form>
+        <table bgcolor="#f2f2f2" width="600px" align="center" >
+            <tr><td>用户名：</td><td><input type="text" name="username" size="25" maxlength="6" placeholder="请输入用户名"/></td></tr>
+            <tr><td>密码：</td><td><input type="password" name="paw" size="25" maxlength="6" placeholder="请输入密码"/></td></tr>
+            <tr><td>确认密码：</td><td><input type="password" name="paw" size="25" maxlength="6" placeholder="请重新输入密码"/></td></tr>
+            <tr><td>上传照片：</td><td><input type="file" name="file"/></td></tr>
+            </table>
+    </form>
+</body>
+</html>
+ -->
+ <!-- 
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ensp;性别：
+        <input type="radio" name="sex" value="man">男
+        &nbsp;
+        <input type="radio" name="sex" value="woman">女
+        <br>
+        喜欢的水果：
+        <input type="checkbox" name="fruit" value="apple">苹果
+        <input type="checkbox" name="fruit" value="peal">梨
+        <input type="checkbox" name="fruit" value="peach">桃子
+    </form>
+</body>
+</html>
+  -->
+  <!-- 
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title> 
+</head>
+<body>
+    <h3 align="center">注册信息</h3>
+    <hr boerdercolor="#336699">
+    <table bgcolor="#f2f2f2" width="600px" align="center">
+        <tr><td>用户名：</td><td><form><input type="text" placeholder="请输入用户名" width="25px" maxlength="6"/></form></td></tr>
+        <tr><td>密码：</td><td><form><input type="password" placeholder="请输入密码" width="25px" maxlength="6"/></form></td></tr>
+        <tr><td>确认密码：</td><td><form><input type="password" placeholder="请再次输入密码" width="25px" maxlength="6"/></form></td></tr>
+        <tr><td>上传照片：</td><td><form><input type="file" /></form></td></tr>
+    </table>
+</body>
+</html>
+   -->

@@ -1,0 +1,528 @@
+<!-- 定位 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSSpractice4-3</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+            text-decoration:none;
+            font-family:"微软雅黑"
+            
+        }
+        body{
+            width:1337px;
+            background-color:#0b051d;
+            color:#fff;
+        }
+/*头部样式*/
+        a:link,a:visited{
+            color:#fff;
+        }
+        a:active{
+            color:#e35175;
+        }
+        .head{
+            height:25px;
+            padding:20px 60px;
+            background-color:#e35175;
+            position:relative;
+        }
+        .head li{
+            display:inline;
+            margin:0px 20px;
+            list-style-type:none;
+        }
+        .head form{
+            position:absolute;
+            top:20px;
+            right:70px;
+        }
+        .head form input,a{
+            margin:0 10px;
+        }       
+/*主体样式*/
+        .main{
+            width:1337px;
+            overflow:hidden;
+        }
+        .banner{
+            width:80%;
+            margin:30px auto;
+            right:0;
+            left:0;
+        }
+        .banner img{
+            width:100%;
+        }
+/*导航样式*/
+        .nav{
+            overflow:hidden;
+            width:1337px;
+            position:absolute;
+            top:75px;
+            left:36px;
+        }
+        dl{
+            float:left;
+        }
+        dt{
+            background-color:#e35175;
+            width:170px;
+            text-align:center;
+            margin:10px 5px 1px 5px;
+        }
+        dd{
+            background-color:#f2c987;
+            width:170px;
+            text-align:center;
+            margin:0px auto;
+            padding-top:5px;
+            padding-bottom:5px;
+            border-bottom:1px dashed #e35175;
+        }
+        .dd{
+            display:none;
+        }
+        dt:hover+.dd{
+            display:block;
+        }        
+/*内容样式*/
+        .title{
+            letter-spacing:0.6em;
+            text-align:center;
+            margin-bottom:15px;
+            color:#e35175;
+        }
+        .content div{
+            width:210px;
+            height:auto;
+            line-height:1.5em;          
+            float:left;
+            margin:10px 10px;
+            padding:5px;
+            left:80px;
+            position:relative; 
+            border:1px solid #fff;          
+        }
+        .banner img{
+            margin-top:30px;
+        }
+        .content img{
+            width:100%;
+        }
+        .content .number{
+            position:absolute;
+            right:10px;
+            bottom:5px;
+            color:#f2c987;
+        }
+        .content .price{
+            color:#e35175;
+        }
+        .content a{
+            margin-left:0px;
+        }
+/*广告样式*/
+        .ad .left{
+            width:175px;
+            position:fixed;
+            top:28%;
+            left:0px;
+        }
+        .ad .right{
+            width:175px;
+            position:fixed;
+            top:28%;
+            right:0;
+        }
+        .left img,.right img{
+            width:175px;
+        }
+        .ad p{
+            line-height:1.4em;
+            background-color:#e35175;
+            text-align:center;
+            margin:0px 20px;
+        }
+/*页脚样式*/
+        .foot{
+            width:1337px;
+            height:90px;
+            color:#aaa;
+            font-size:0.8em;
+            background-color:#130a39;
+            margin-top:40px;
+            position:relative;
+        }
+        .foot li{
+            list-style-type:none;
+            display:inline;
+            margin-right:20px;
+        }
+        .foot ul{
+            position:absolute;
+            left:100px;
+            top:30px;
+        }
+        .copyright{
+            position:absolute;
+            left:100px;
+            bottom:20px;
+        }
+        .code1p{
+            position:absolute;
+            right:280px;
+            bottom:30px;
+        }
+        .code2p{
+            position:absolute;
+            right:160px;
+            bottom:30px;
+        }
+        .code1img{
+            width:100px;
+            position:absolute;
+            bottom:20px;
+            right:360px;
+            display:none;
+        }
+        .code2img{
+            width:100px;
+            position:absolute;
+            bottom:20px;
+            right:225px;
+            display:none;
+        }
+        .code1p:hover+.code1img{display:block;}
+        .code2p:hover+.code2img{display:block;}
+    </style>
+</head>
+<body>
+    <div class="head">
+        <ul>
+            <li>免费课程</li>
+            <li>职业路径</li>
+            <li>实战</li>
+            <li>猿问</li>
+            <li>手记</li>
+            <li>找工作</li>
+        </ul>
+        <form>
+            <input type="text" name="keyword" placeholder="请输入想搜索的内容">
+            <input type="button" value="find" >
+            <a href="#">下载APP</a>
+            <input type="button" value="&#10084;点个赞">
+            <a href="#">&#9992;</a>
+        </form>
+    </div>
+    <div class="main">
+        <div class="banner">
+            <img src="imagelibrary/image1.jpg">
+        </div>
+        <div class="nav">
+            <dl class="a">
+                <dt><a href="#"> 前沿区块链人工智能</a></dt>
+                <div class="dd">
+                    <dd>微服务</dd>
+                    <dd>区块链</dd>
+                    <dd>以太坊</dd>
+                    <dd>人工智能</dd>
+                    <dd>机器学习</dd>
+                    <dd>深度学习</dd>
+                </div>
+            </dl>
+            <dl class="b">
+                <dt><a href="#">前端小程序JS</a></dt>
+                <div class="dd">
+                    <dd>HTML&frasl;CSS</dd>
+                    <dd>JavaScript</dd>
+                    <dd>VueJS</dd>
+                    <dd>ReactJS</dd>
+                    <dd>Angular</dd>
+                    <dd>jQuery</dd>
+                </div>
+            </dl>
+            <dl class="c">
+                <dt><a href="#">后端JAVAPython</a></dt>
+                <div class="dd">
+                    <dd>Java</dd>
+                    <dd>SpringBoot</dd>
+                    <dd>Python</dd>
+                    <dd>爬虫</dd>
+                    <dd>Djinag</dd>
+                    <dd>PHP</dd>
+                </div>
+            </dl>
+            <dl class="d">
+                <dt><a href="#">移动AndroidIOS</a></dt>
+                <div class="dd">
+                    <dd>Android</dd>
+                    <dd>IOS</dd>
+                    <dd>Reactnative</dd>
+                    <dd>WEEX</dd>
+                </div>
+            </dl>
+            <dl class="e">
+                <dt><a href="#">云计算大数据兼容器</a></dt>
+                <div class="dd">
+                    <dd>算法</dd>
+                    <dd>数据结构</dd>
+                    <dd>大数据</dd>
+                    <dd>Hadoop</dd>
+                    <dd>Spark</dd>
+                    <dd>Hbase</dd>
+                    <dd>云计算</dd>
+                </div>
+            </dl>
+            <dl class="f">
+                <dt><a href="#">运维测试数据库</a></dt>
+                <div class="dd">
+                    <dd>运维</dd>
+                    <dd>Linux</dd>
+                    <dd>测试</dd>
+                    <dd>功能测试</dd>
+                    <dd>性能测试</dd>
+                    <dd>接口测试</dd>
+                    <dd>数据库</dd>
+                </div>
+            </dl>
+            <dl class="g">
+                <dt><a href="#">UI设计3D动画游戏</a></dt>
+                <div class="dd">
+                    <dd>模型制作</dd>
+                    <dd>动效动画</dd>
+                    <dd>设计基础</dd>
+                    <dd>设计工具</dd>
+                    <dd>APPUI设计</dd>
+                    <dd>产品交互</dd>
+                </div>
+            </dl>
+        </div>
+        <div class="content">
+            <p class="title">实&frasl;战&frasl;推&frasl;荐<a href="#">&nbsp;&nbsp;更多&gt;</a></p>
+            <div>
+                <img src="imagelibrary/image2.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image3.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image4.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image5.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image6.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image6.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image4.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image5.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image2.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+            <div>
+                <img src="imagelibrary/image3.jpg">
+                <a href="#">贯穿全栈ReactNative开发</a>
+                <p class="price">&yen;511&middot;00</p>
+                <p class="number">115人在学</p>
+            </div>
+        </div>
+    </div>
+    <div class="ad">
+        <div class="left">
+            <img src="imagelibrary/image7.png">
+            <p>WEB前端工程师<br/><a href="#">职业路径&gt;</a></p>
+        </div>
+        <div class="right">
+            <img src="imagelibrary/image8.png">
+            <p>JAVA工程师<br/><a href="#">职业路径&gt;</a></p>
+        </div>
+    </div>
+    <div class="foot">
+        <ul>
+            <li>企业合作</li>
+            <li>人才招聘</li>
+            <li>联系我们</li>
+            <li>讲师招募</li>
+            <li>常见问题</li>
+            <li>意见反馈</li>
+            <li>慕课大学</li>
+            <li>友情链接</li>
+        </ul>
+        <p class="copyright">&copy;2018&nbsp;imooc&dot;com&nbsp;京ICP备12003892号&ndash;11</p>
+        <div>
+            <p class="code1p">官方公众号</p>
+            <img class="code1img" src="imagelibrary/image9.png">
+        </div>
+        <div>
+            <p class="code2p">官方微博</p>      
+            <img class="code2img" src="imagelibrary/image9.png">
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    .test{
+     width: 800px;
+     height: 100px;
+     background: red;
+     position:fixed;
+     top:0px;
+     right:0px;
+     left:0px;
+     margin:auto;
+   }
+   .out{
+    width: 100%;
+    height: 2000px;
+    background-color: #abcdef;
+  }
+</style>
+</head>
+<body>
+  <div class="out">
+    <div class="test"></div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .test{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position:absolute;
+      right:200px;
+      bottom:100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="test"></div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /*完善下列代码*/
+    .per{
+     width: 300px;
+     height: 300px;
+     background: red;
+     margin-left:200px;
+     margin-top: 200px;
+     position:relative;
+   }
+
+   .son{
+     width: 100px;
+     height: 100px;
+     background: blue;
+     position:absolute;
+     top:0;
+     right:0;
+     left:0;
+     bottom:0;
+     margin:auto auto;
+   }
+  </style>
+</head>
+<body>
+  <div class="per">
+    <div class="son"></div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+        .blue{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position:relative;
+            left:50px;
+            top:50px;
+        }
+        .red{
+            width: 100px;
+            height: 100px;
+            background: red;   
+        }
+    </style>
+</head>
+<body>
+    <div class="blue"></div>
+    <div class="red"></div>
+</body>
+</html>
+ -->

@@ -1,0 +1,160 @@
+<!-- 内置对象——数组 -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 封装indexOf方法</title>
+</head>
+<body>
+<script>
+   function arrayIndexOf(arr,indexValue)
+   {
+       for(var i=0;i<arr.length;i++)
+       {
+           if(arr[i]===indexValue)
+           {return i}
+       }
+       return "-1";
+   }
+   var A=[0,1,2,3,4,5,6];
+   document.write(arrayIndexOf(A,3));
+</script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>splice</title>
+</head>
+<body>
+<script>
+   var P=prompt("请输入任意想要输入的数字"),
+       arr=new Array;
+   while(P!=-1)
+   {
+       arr.push(P);
+       P=prompt("请输入任意想要输入的数字");
+   }
+   arr.splice(0,2,"hello");
+   document.write(arr);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数组排序</title>
+</head>
+<body>
+<script>
+    var input,
+        arr=[];
+    while(input!="-1")
+    {
+        input=Number(prompt("请输入您想排序的数字"));
+        arr.push(input);
+     }
+    arr.pop();
+    arr.sort(function(a,b){return a-b});
+    document.write(arr);
+    document.write("<hr/>"+arr.join(">"));
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数组反转</title>
+</head>
+<body>
+<script>
+function fun1()
+{
+    var rearr=new Array()
+        l=arguments.length,
+        i=0,
+        n=0;
+    for(i=0;i<l;i++)
+    {
+        n=l-1-i;
+        rearr[n]=arguments[i];
+    }
+    return rearr
+}
+document.write(fun1(1,2,3,4,5,6)+"<hr/>");
+
+function fun2()
+{
+    var arr=new Array(),i;
+    for(i=0;i<arguments.length;i++)
+    {arr.unshift(arguments[i])}
+    return arr;
+}
+document.write(fun2("a","b","c","d","e","f"));
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>统计员工工资</title>
+    </head>
+    <body>
+    <script>
+    
+       var salary=new Array(),
+           l=0,
+           inp,
+           i;
+       for(i=0;i<=l;i++)
+       {
+           inp=prompt("请输入员工工资");
+           if(inp=="退出")
+           {document.write(salary);break};
+           salary[i]=parseFloat(inp);
+           l=salary.length
+       }
+    </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>数组遍历</title>
+</head> 
+<body>
+  <script>
+   var array=new Array("HTML","CSS","JavaScript","HTML5","CSS3"),i;
+   for(i=0;i<array.length;i++)
+   {document.write("<h1>"+array[i]+"</h1>")};
+  </script>     
+</body>
+</html>
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建数组</title>
+</head>
+<body>
+    <script>
+    var fourFN=new Array("《三国演义》","《红楼梦》","《西游记》");
+    fourFN[3]="《水浒传》";
+    document.write(fourFN.length);
+    </script>
+</body>
+
+
+</html>
+ -->

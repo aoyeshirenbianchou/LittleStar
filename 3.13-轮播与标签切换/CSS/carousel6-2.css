@@ -1,0 +1,42 @@
+/*总体*/
+*{
+	margin:0;
+	text-decoration:none;
+	font-family:"Microsoft YaHei";
+	color:#666;
+	font-size:22px;
+}
+body{
+	padding:10px;
+	min-width:1020px;
+	background-color:#eee;
+}
+/*标签*/
+.tab{
+	height:45px;
+	padding-right:5px;
+	text-align:center;
+	border:1px dashed #eee;
+	border-bottom:none;
+	border-radius:5px;
+	background-color:#fff;
+}
+.tab div,.active{
+	margin-top:5px;
+	margin-left:5px;
+	width:24%;
+	display:inline-block;
+}
+.tab .active{
+	background-color:#FC0;
+	border-radius:5px;
+}
+.tab a{
+	line-height:40px;
+}
+/*图片*/
+img{
+	width:100%;
+	display:none;
+	float:left;
+}

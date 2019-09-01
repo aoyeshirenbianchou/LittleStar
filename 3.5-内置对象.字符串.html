@@ -1,0 +1,221 @@
+<!-- 内置对象，字符串 -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首字母变大写</title>
+</head>
+<body>
+<script>
+    //首字母大写函数
+    function upperCase(str)
+    {
+        var arr=str.split(" "),
+            eachstr,
+            strl,
+            stru,
+            eachstrU,
+            upperstr=[],
+            i=0;
+        while(i<arr.length)
+        {
+            eachstr=arr[i];
+            strl=eachstr.substr(0,1);
+            stru=strl.toUpperCase();
+            eachstrU=eachstr.replace(strl,stru);
+            upperstr+=eachstrU+" ";
+            i++;
+        }
+        return upperstr;
+    }
+    //函数调用
+    var str="all time is no time, when it is past.";
+    document.write(upperCase(str));
+</script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>string之大小写</title>
+</head>
+<body>
+<script>
+    var str= "If you would have a thing well done, do it yourself!",
+        arr=str.split(" "),
+        arrtostr,
+        stru,
+        strU,
+        upper,
+        upperStr=[],
+        i=0;
+    while(i<arr.length)
+    {
+        arrtostr=arr[i];
+        stru=arrtostr.substr(0,1);
+        strU=stru.toUpperCase();
+        upper=arrtostr.replace(stru,strU);
+        upperStr+=upper+" ";
+        i++;
+    }
+    document.write(upperStr);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>toUpperCase和toLowerCase</title>
+</head>
+<body>
+<script>
+    var str="Never deter till tomorrow that which you can do today";
+/*
+    var index=str.indexOf("tomorrow");
+    var strNew=str.substr(index,8);
+    var upperStr=strNew.toUpperCase();
+    document.write(upperStr);
+*/
+    var upperStr=str.replace("tomorrow","TOMORROW");
+    document.write(upperStr);
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var phone=prompt("请输入手机号码"),
+        n=phone.substr(0,7),
+        secret=phone.replace(n,"*******");
+    document.write("用户"+secret);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>split（）</title>
+</head>
+<body>
+<script>
+    var str="a/b/c/d/e/f/g/h";
+    var arr=str.split("/");
+    var strNew=arr.join("-");
+    document.write(arr);
+    document.write("<br/>");
+    document.write(strNew);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+<body>
+<script>
+    var mail=prompt("请输入登陆邮箱"),
+    ind=mail.indexOf("@");
+    document.write("邮箱的用户名是："+mail.slice(0,ind)+"<br/>");
+    document.write("登陆的邮箱域名是："+mail.slice(ind+1)+"邮箱");
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>string方法</title>
+</head>
+<body>
+<script>
+    var par="JavaScript是属于网络的脚本语言！JavaScript被数百万计的网页用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用。JavaScript是因特网上最流行的脚本语言。JavaScript很容易使用！你一定会喜欢它的！JavaScript",
+        ind=par.indexOf("JavaScript"),
+        las=par.lastIndexOf("JavaScript"),
+        i=1;
+    while(ind<las+1&&ind!=-1)
+    {
+        document.write("JavaScript第"+i+"次出现是在"+ind+"的位置"+"<br/>");
+        ind=par.indexOf("JavaScript",ind+1);
+        i++;
+    }
+    document.write("JavaScript在这段话中出现了"+(i-1)+"次")
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>string方法</title>
+</head>
+<body>
+<script>
+    var str="Program apes' world you do not understand";
+    document.write(str.slice(8,12));
+    document.write("<br/>");
+    document.write(str.substring(8,12));
+    document.write("<br/>");
+    document.write(str.substr(8,4));
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>搜索内容是否有敏感字"草"</title>
+</head>
+<body>
+<script>
+    var pro=prompt("输入您想要搜索的内容"),
+        lastind=pro.lastIndexOf("草"),
+        ind=pro.indexOf("草");
+    if(ind!=-1)
+    {
+        while(ind<lastind+1&&ind!=-1)
+        {
+            document.write("敏感字“草”出现在位置"+(ind+1)+"</br>");
+            ind=pro.indexOf("草",ind+1)
+        }
+        document.write("敏感字第一次出现的位置是"+(pro.indexOf("草")+1))
+    }
+    else{document.write("不含有敏感字")}
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>charCodeAt()</title>
+</head>
+<body>
+<script>
+var str="Work hard, earn money.",
+    strKey=str.indexOf("a");
+document.write(str.charCodeAt(strKey));
+</script>
+</body>
+</html>
+ -->

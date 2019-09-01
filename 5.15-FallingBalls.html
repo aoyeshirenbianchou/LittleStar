@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FallingBalls</title>
+    <style type="text/css">
+    *{margin:0;padding:0;}
+    body{overflow:hidden;background-color:black;}
+    html,body,canvas{width:100%;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+    var canvas = document.getElementById("canvas"),
+        ct = canvas.getContext("2d"),
+        w = window.innerWidth,
+        h = window.innerHeight;
+    canvas.width = w;
+    canvas.height = h;
+
+    var circle = [];
+    setInterval(function(){
+        canvas.height = h;
+        for(var i = 0;i < 30;i++){
+            if(!circle[i]){
+                circle[i] = {};
+                circle[i].hsite = Math.random() * w;
+                circle[i].r = Math.random() * 20 + 5;
+                circle[i].colo = "rgba(255,255,255," + Math.random() + ")";
+                circle[i].vsite = 0;
+            }
+            //产生12个带着不同属性的对象（小球）
+            //使用这些属性画出小
+            ct.beginPath();
+            ct.fillStyle = circle[i].colo;
+            circle[i].vsite = circle[i].vsite + circle[i].r;
+            ct.arc(circle[i].hsite,circle[i].vsite,circle[i].r,0,Math.PI * 2,false);
+            ct.fill();
+            if(circle[i].vsite > h){
+                circle[i] = undefined;
+            }
+        }
+    },100)
+    </script>
+</body>
+</html>
